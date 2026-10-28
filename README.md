@@ -575,7 +575,7 @@ The rest of the plan's feature list (§3 and §6), apart from the AI layer.
 
 | Claim (plan §8) | How it's shown | Result |
 |---|---|---|
-| No double bookings across 1M attempts | `go run ./cmd/stress -attempts 1000000`: a million holds and releases from 48 goroutines straight into the booking core, on 40 busy runs (each passenger cycling through the three-unpaid-holds limit, so nearly every attempt really allocates), then every allocation checked against every other | 0 overlapping allocations, 0 unexpected errors |
+| No double bookings across 1M attempts | `go run ./cmd/stress -attempts 1000000`: a million holds and releases from 48 goroutines straight into the booking core, on 40 busy runs (each passenger cycling through the three-unpaid-holds limit, so nearly every attempt really allocates), then every allocation checked against every other | 0 overlapping allocations, 0 unexpected errors: 233,448 holds got berths, 183,026 joined the RAC/waitlist, 168,081 were refused as full and 415,445 holds were released and resold, in 1 h 25 min (about 200 attempts/s on a laptop) |
 | No "paid but not booked" | reconciliation and the gateway chaos drill; `/v1/admin/integrity` | 0 after reconciliation |
 | Tatkal: thousands at once | `go run ./cmd/botswarm -users 5000` (CI runs 500) | fair queue, bots blocked, no berth sold twice |
 | Each chaos failure recovers on its own | `smoke_phase12.py` | gateway ~2 min, database ~2 s, event bus < 1 s, breakdown ~2 s |
