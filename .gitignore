@@ -1,0 +1,20 @@
+node_modules/
+.next/
+.next-dev/
+dist/
+.turbo/
+*.log
+.env
+.env.local
+services/core/bin/
+coverage/
+.DS_Store
+*.tsbuildinfo
+.expo/
+*.exe
+.claude/
+.vscode/
+.idea/
+
+# Downloaded source datasets (rebuild with scripts/fetch_network.sh)
+data/raw/

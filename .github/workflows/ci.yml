@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  core:
+    name: Go core (vet, test, build)
+    runs-on: ubuntu-latest
+    # The booking tests run against a real Postgres (exclusion constraints, advisory locks, races).
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: yatrax
+          POSTGRES_PASSWORD: yatrax
+          POSTGRES_DB: yatrax
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U yatrax" --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      TEST_DATABASE_ADMIN_URL: postgres://yatrax:yatrax@localhost:5432/postgres?sslmode=disable
+    defaults:
+      run:
+        working-directory: services/core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: services/core/go.mod
+          cache-dependency-path: services/core/go.sum
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+      - run: go vet ./...
+      - run: go test -race ./...
+      - run: go build ./...
+
+  web:
+    name: Web apps (typecheck, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+
+  stack:
+    name: Docker stack smoke test
+    runs-on: ubuntu-latest
+    needs: core
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start stack
+        run: SEED_PASSENGERS=5000 docker compose up -d --build --wait core payments
+      - name: Smoke test every role (Phase 0)
+        run: python3 scripts/smoke_phase0.py
+      - name: Smoke test search, fares and availability (Phase 1)
+        run: python3 scripts/smoke_phase1.py
+      - name: Smoke test booking, payments and tickets (Phase 2)
+        run: python3 scripts/smoke_phase2.py
+      - name: Smoke test cancellation, waitlist, refunds and charts (Phase 3)
+        run: python3 scripts/smoke_phase3.py
+      - name: Smoke test the Tatkal waiting room (Phase 4)
+        run: python3 scripts/smoke_phase4.py
+      - name: Smoke test live trains and the simulation clock (Phase 5)
+        run: python3 scripts/smoke_phase5.py
+      - name: Smoke test the TTE app's sync (Phase 6)
+        run: python3 scripts/smoke_phase6.py
+      - name: Smoke test the station app (Phase 7)
+        run: python3 scripts/smoke_phase7.py
+      - name: Smoke test the control centre (Phase 8)
+        run: python3 scripts/smoke_phase8.py
+      - name: Smoke test catering (Phase 9)
+        run: python3 scripts/smoke_phase9.py
+      - name: Smoke test the dashboards (Phase 11)
+        run: python3 scripts/smoke_phase11.py
+      - name: Chaos drills and the digital twin (Phase 12)
+        run: python3 scripts/smoke_phase12.py
+      - name: Specials, upgrades, quotas, invoices, SOS, stays, groups
+        run: python3 scripts/smoke_extras.py
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: services/core/go.mod
+          cache-dependency-path: services/core/go.sum
+      - name: Tatkal drill, 500 people (zero double bookings)
+        working-directory: services/core
+        run: go run ./cmd/botswarm -users 500 -opens 45s -rate 100
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs seed core payments

@@ -1,0 +1,18 @@
+{
+  "name": "yatrax",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "infra:up": "docker compose up -d --build",
+    "infra:down": "docker compose down",
+    "infra:reset": "docker compose down -v && docker compose up -d --build"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

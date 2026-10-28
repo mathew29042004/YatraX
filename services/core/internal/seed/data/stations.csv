@@ -1,0 +1,511 @@
+code,name,state,zone,division,lat,lon,importance
+MAS,Chennai Central,Tamil Nadu,SR,Chennai,13.0827,80.2757,1
+MS,Chennai Egmore,Tamil Nadu,SR,Chennai,13.0780,80.2620,1
+TBM,Tambaram,Tamil Nadu,SR,Chennai,12.9249,80.1000,2
+CGL,Chengalpattu Junction,Tamil Nadu,SR,Chennai,12.6919,79.9766,2
+TRL,Tiruvallur,Tamil Nadu,SR,Chennai,13.1430,79.9080,3
+AJJ,Arakkonam Junction,Tamil Nadu,SR,Chennai,13.0840,79.6710,2
+WJR,Walajah Road,Tamil Nadu,SR,Chennai,12.9300,79.3600,3
+KPD,Katpadi Junction,Tamil Nadu,SR,Chennai,12.9720,79.1370,1
+AB,Ambur,Tamil Nadu,SR,Chennai,12.7900,78.7160,3
+VLT,Vaniyambadi,Tamil Nadu,SR,Chennai,12.6820,78.6200,3
+JTJ,Jolarpettai Junction,Tamil Nadu,SR,Salem,12.5650,78.5750,2
+SA,Salem Junction,Tamil Nadu,SR,Salem,11.6710,78.1290,1
+ED,Erode Junction,Tamil Nadu,SR,Salem,11.3330,77.7170,1
+TUP,Tiruppur,Tamil Nadu,SR,Salem,11.1090,77.3400,2
+CBE,Coimbatore Junction,Tamil Nadu,SR,Salem,10.9970,76.9670,1
+PTJ,Podanur Junction,Tamil Nadu,SR,Salem,10.9380,76.9800,3
+NMKL,Namakkal,Tamil Nadu,SR,Salem,11.2190,78.1670,3
+KRR,Karur Junction,Tamil Nadu,SR,Salem,10.9600,78.0800,2
+MTP,Mettupalayam,Tamil Nadu,SR,Salem,11.3000,76.9400,3
+UAM,Udhagamandalam,Tamil Nadu,SR,Salem,11.4100,76.7000,3
+DPJ,Dharmapuri,Tamil Nadu,SR,Salem,12.1270,78.1580,3
+HSRA,Hosur,Tamil Nadu,SR,Salem,12.7400,77.8250,3
+VM,Villupuram Junction,Tamil Nadu,SR,Tiruchchirappalli,11.9400,79.4900,1
+PDY,Puducherry,Puducherry,SR,Tiruchchirappalli,11.9340,79.8300,2
+VRI,Vriddhachalam Junction,Tamil Nadu,SR,Tiruchchirappalli,11.5180,79.3250,2
+ARY,Ariyalur,Tamil Nadu,SR,Tiruchchirappalli,11.1400,79.0800,3
+TPJ,Tiruchchirappalli Junction,Tamil Nadu,SR,Tiruchchirappalli,10.7950,78.6850,1
+TJ,Thanjavur Junction,Tamil Nadu,SR,Tiruchchirappalli,10.7800,79.1300,2
+KMU,Kumbakonam,Tamil Nadu,SR,Tiruchchirappalli,10.9600,79.3800,2
+MV,Mayiladuthurai Junction,Tamil Nadu,SR,Tiruchchirappalli,11.1000,79.6500,2
+CDM,Chidambaram,Tamil Nadu,SR,Tiruchchirappalli,11.3900,79.6900,3
+CUPJ,Cuddalore Port Junction,Tamil Nadu,SR,Tiruchchirappalli,11.7100,79.7600,3
+TVR,Tiruvarur Junction,Tamil Nadu,SR,Tiruchchirappalli,10.7700,79.6400,3
+NGT,Nagapattinam,Tamil Nadu,SR,Tiruchchirappalli,10.7650,79.8430,3
+VLNK,Velankanni,Tamil Nadu,SR,Tiruchchirappalli,10.6800,79.8400,3
+KKDI,Karaikkudi Junction,Tamil Nadu,SR,Tiruchchirappalli,10.0700,78.7800,3
+PDKT,Pudukkottai,Tamil Nadu,SR,Tiruchchirappalli,10.3800,78.8200,3
+DG,Dindigul Junction,Tamil Nadu,SR,Madurai,10.3600,77.9800,1
+MDU,Madurai Junction,Tamil Nadu,SR,Madurai,9.9190,78.1100,1
+VPT,Virudhunagar Junction,Tamil Nadu,SR,Madurai,9.5850,77.9600,2
+SVKS,Sivakasi,Tamil Nadu,SR,Madurai,9.4500,77.8000,3
+KVP,Kovilpatti,Tamil Nadu,SR,Madurai,9.1700,77.8700,3
+TEN,Tirunelveli Junction,Tamil Nadu,SR,Madurai,8.7280,77.7100,1
+TN,Thoothukudi,Tamil Nadu,SR,Madurai,8.8000,78.1500,2
+RMM,Rameswaram,Tamil Nadu,SR,Madurai,9.2880,79.3120,2
+MNM,Manamadurai Junction,Tamil Nadu,SR,Madurai,9.6900,78.4600,3
+RMD,Ramanathapuram,Tamil Nadu,SR,Madurai,9.3600,78.8300,3
+SCT,Sengottai,Tamil Nadu,SR,Madurai,8.9750,77.2500,3
+TSI,Tenkasi Junction,Tamil Nadu,SR,Madurai,8.9600,77.3000,3
+PUU,Punalur,Kerala,SR,Madurai,9.0100,76.9200,3
+NCJ,Nagercoil Junction,Tamil Nadu,SR,Thiruvananthapuram,8.1900,77.4300,2
+CAPE,Kanniyakumari,Tamil Nadu,SR,Thiruvananthapuram,8.0880,77.5450,2
+TVC,Thiruvananthapuram Central,Kerala,SR,Thiruvananthapuram,8.4870,76.9520,1
+KCVL,Kochuveli,Kerala,SR,Thiruvananthapuram,8.5100,76.9030,2
+VAK,Varkala Sivagiri,Kerala,SR,Thiruvananthapuram,8.7330,76.7180,3
+QLN,Kollam Junction,Kerala,SR,Thiruvananthapuram,8.8870,76.5950,1
+KYJ,Kayamkulam Junction,Kerala,SR,Thiruvananthapuram,9.1740,76.5050,2
+MVLK,Mavelikara,Kerala,SR,Thiruvananthapuram,9.2500,76.5500,3
+CNGR,Chengannur,Kerala,SR,Thiruvananthapuram,9.3170,76.6110,2
+TRVL,Tiruvalla,Kerala,SR,Thiruvananthapuram,9.3850,76.5750,3
+CGY,Changanassery,Kerala,SR,Thiruvananthapuram,9.4450,76.5450,3
+KTYM,Kottayam,Kerala,SR,Thiruvananthapuram,9.5900,76.5220,1
+ALLP,Alappuzha,Kerala,SR,Thiruvananthapuram,9.4900,76.3260,2
+ERS,Ernakulam Junction,Kerala,SR,Thiruvananthapuram,9.9690,76.2910,1
+ERN,Ernakulam Town,Kerala,SR,Thiruvananthapuram,9.9900,76.2880,2
+AWY,Aluva,Kerala,SR,Thiruvananthapuram,10.1080,76.3570,2
+AFK,Angamaly,Kerala,SR,Thiruvananthapuram,10.1960,76.3860,3
+CKI,Chalakudi,Kerala,SR,Thiruvananthapuram,10.3070,76.3310,3
+IJK,Irinjalakuda,Kerala,SR,Thiruvananthapuram,10.3400,76.2400,3
+TCR,Thrissur,Kerala,SR,Thiruvananthapuram,10.5150,76.2120,1
+GUV,Guruvayur,Kerala,SR,Thiruvananthapuram,10.5940,76.0400,3
+SRR,Shoranur Junction,Kerala,SR,Palakkad,10.7610,76.2730,1
+OTP,Ottappalam,Kerala,SR,Palakkad,10.7700,76.3770,3
+PGT,Palakkad Junction,Kerala,SR,Palakkad,10.7970,76.6520,1
+NIL,Nilambur Road,Kerala,SR,Palakkad,11.2800,76.2300,3
+KTU,Kuttippuram,Kerala,SR,Palakkad,10.8400,76.0300,3
+TIR,Tirur,Kerala,SR,Palakkad,10.9150,75.9220,2
+PGI,Parappanangadi,Kerala,SR,Palakkad,11.0500,75.8600,3
+FK,Feroke,Kerala,SR,Palakkad,11.1800,75.8400,3
+CLT,Kozhikode,Kerala,SR,Palakkad,11.2470,75.7800,1
+QLD,Quilandi,Kerala,SR,Palakkad,11.4400,75.6950,3
+BDJ,Vatakara,Kerala,SR,Palakkad,11.6000,75.5900,3
+TLY,Thalassery,Kerala,SR,Palakkad,11.7500,75.4900,2
+CAN,Kannur,Kerala,SR,Palakkad,11.8740,75.3700,1
+PAY,Payyanur,Kerala,SR,Palakkad,12.1000,75.2000,3
+KZE,Kanhangad,Kerala,SR,Palakkad,12.3100,75.0900,3
+KGQ,Kasaragod,Kerala,SR,Palakkad,12.4930,74.9900,2
+MAJN,Mangaluru Junction,Karnataka,SR,Palakkad,12.8650,74.8800,1
+MAQ,Mangaluru Central,Karnataka,SR,Palakkad,12.8640,74.8380,1
+UD,Udupi,Karnataka,KR,Karwar,13.3400,74.7600,2
+KUDA,Kundapura,Karnataka,KR,Karwar,13.6300,74.7000,3
+BTKL,Bhatkal,Karnataka,KR,Karwar,13.9800,74.5600,3
+KT,Kumta,Karnataka,KR,Karwar,14.4250,74.4200,3
+GOK,Gokarna Road,Karnataka,KR,Karwar,14.5500,74.3500,3
+KAWR,Karwar,Karnataka,KR,Karwar,14.8100,74.1300,2
+MAO,Madgaon Junction,Goa,KR,Karwar,15.2690,73.9700,1
+KRMI,Karmali,Goa,KR,Karwar,15.4900,73.9300,2
+THVM,Thivim,Goa,KR,Karwar,15.6200,73.8800,3
+SWV,Sawantwadi Road,Maharashtra,KR,Ratnagiri,15.9000,73.8200,3
+KUDL,Kudal,Maharashtra,KR,Ratnagiri,16.0100,73.6900,3
+KKW,Kankavali,Maharashtra,KR,Ratnagiri,16.2700,73.7100,3
+RAJP,Rajapur Road,Maharashtra,KR,Ratnagiri,16.6600,73.5200,3
+RN,Ratnagiri,Maharashtra,KR,Ratnagiri,16.9900,73.3100,1
+CHI,Chiplun,Maharashtra,KR,Ratnagiri,17.5300,73.5200,2
+KHED,Khed,Maharashtra,KR,Ratnagiri,17.7200,73.4000,3
+ROHA,Roha,Maharashtra,CR,Mumbai,18.4400,73.1200,2
+PNVL,Panvel,Maharashtra,CR,Mumbai,18.9900,73.1200,1
+CSMT,Mumbai CSMT,Maharashtra,CR,Mumbai,18.9400,72.8350,1
+DR,Dadar,Maharashtra,CR,Mumbai,19.0180,72.8430,1
+LTT,Lokmanya Tilak Terminus,Maharashtra,CR,Mumbai,19.0690,72.8900,1
+TNA,Thane,Maharashtra,CR,Mumbai,19.1860,72.9750,1
+KYN,Kalyan Junction,Maharashtra,CR,Mumbai,19.2350,73.1300,1
+KJT,Karjat,Maharashtra,CR,Mumbai,18.9100,73.3200,2
+KSRA,Kasara,Maharashtra,CR,Mumbai,19.6400,73.4800,3
+IGP,Igatpuri,Maharashtra,CR,Mumbai,19.6950,73.5600,2
+LNL,Lonavala,Maharashtra,CR,Pune,18.7500,73.4060,2
+PUNE,Pune Junction,Maharashtra,CR,Pune,18.5280,73.8740,1
+STR,Satara,Maharashtra,CR,Pune,17.6800,74.0200,3
+SLI,Sangli,Maharashtra,CR,Pune,16.8500,74.5800,3
+MRJ,Miraj Junction,Maharashtra,CR,Pune,16.8300,74.6400,2
+KOP,Kolhapur CSMT,Maharashtra,CR,Pune,16.7050,74.2400,2
+DD,Daund Junction,Maharashtra,CR,Solapur,18.4600,74.5800,2
+KWV,Kurduvadi Junction,Maharashtra,CR,Solapur,18.0900,75.4200,3
+SUR,Solapur,Maharashtra,CR,Solapur,17.6650,75.8950,1
+DUD,Dudhani,Maharashtra,CR,Solapur,17.3500,76.3700,3
+KLBG,Kalaburagi,Karnataka,CR,Solapur,17.3200,76.8300,2
+WADI,Wadi Junction,Karnataka,CR,Solapur,17.0550,76.9900,2
+LUR,Latur,Maharashtra,CR,Solapur,18.4000,76.5600,3
+ANG,Ahilyanagar,Maharashtra,CR,Solapur,19.0850,74.7500,2
+KPG,Kopargaon,Maharashtra,CR,Solapur,19.8800,74.4800,3
+SNSI,Sainagar Shirdi,Maharashtra,CR,Solapur,19.7600,74.4800,2
+NK,Nashik Road,Maharashtra,CR,Bhusawal,19.9500,73.8400,1
+MMR,Manmad Junction,Maharashtra,CR,Bhusawal,20.2500,74.4400,1
+JL,Jalgaon Junction,Maharashtra,CR,Bhusawal,21.0080,75.5650,2
+BSL,Bhusawal Junction,Maharashtra,CR,Bhusawal,21.0480,75.7850,1
+MKU,Malkapur,Maharashtra,CR,Bhusawal,20.8800,76.2000,3
+SEG,Shegaon,Maharashtra,CR,Bhusawal,20.7900,76.6900,3
+AK,Akola Junction,Maharashtra,CR,Bhusawal,20.7100,77.0000,2
+BD,Badnera Junction,Maharashtra,CR,Bhusawal,20.8600,77.7300,2
+AMI,Amravati,Maharashtra,CR,Bhusawal,20.9300,77.7600,2
+KNW,Khandwa Junction,Madhya Pradesh,CR,Bhusawal,21.8250,76.3500,2
+WR,Wardha Junction,Maharashtra,CR,Nagpur,20.7400,78.6000,2
+SEGM,Sevagram,Maharashtra,CR,Nagpur,20.7350,78.6600,3
+NGP,Nagpur Junction,Maharashtra,CR,Nagpur,21.1520,79.0880,1
+BZU,Betul,Madhya Pradesh,CR,Nagpur,21.9000,77.9000,3
+CD,Chandrapur,Maharashtra,CR,Nagpur,19.9500,79.3000,3
+BPQ,Balharshah,Maharashtra,CR,Nagpur,19.8500,79.3500,2
+SC,Secunderabad Junction,Telangana,SCR,Secunderabad,17.4340,78.5010,1
+HYB,Hyderabad Deccan,Telangana,SCR,Hyderabad,17.3920,78.4680,1
+KCG,Kacheguda,Telangana,SCR,Hyderabad,17.3890,78.4980,1
+LPI,Lingampalli,Telangana,SCR,Secunderabad,17.4900,78.3200,2
+KZJ,Kazipet Junction,Telangana,SCR,Secunderabad,17.9750,79.5000,1
+WL,Warangal,Telangana,SCR,Secunderabad,17.9700,79.6000,2
+KMT,Khammam,Telangana,SCR,Secunderabad,17.2470,80.1470,2
+RDM,Ramagundam,Telangana,SCR,Secunderabad,18.7600,79.4500,3
+MCI,Mancherial,Telangana,SCR,Secunderabad,18.8700,79.4500,3
+SKZR,Sirpur Kagaznagar,Telangana,SCR,Secunderabad,19.3500,79.4700,3
+BDCR,Bhadrachalam Road,Telangana,SCR,Secunderabad,17.6600,80.6200,3
+NZB,Nizamabad,Telangana,SCR,Hyderabad,18.6700,78.1000,2
+MBNR,Mahbubnagar,Telangana,SCR,Hyderabad,16.7400,78.0000,3
+GDL,Gadwal,Telangana,SCR,Hyderabad,16.2300,77.8000,3
+KRNT,Kurnool City,Andhra Pradesh,SCR,Hyderabad,15.8300,78.0400,2
+NED,Hazur Sahib Nanded,Maharashtra,SCR,Nanded,19.1600,77.3100,1
+CPSN,Chhatrapati Sambhajinagar,Maharashtra,SCR,Nanded,19.8700,75.3400,2
+BZA,Vijayawada Junction,Andhra Pradesh,SCR,Vijayawada,16.5180,80.6190,1
+TEL,Tenali Junction,Andhra Pradesh,SCR,Vijayawada,16.2370,80.6450,2
+OGL,Ongole,Andhra Pradesh,SCR,Vijayawada,15.5050,80.0480,2
+NLR,Nellore,Andhra Pradesh,SCR,Vijayawada,14.4480,79.9880,1
+GDR,Gudur Junction,Andhra Pradesh,SCR,Vijayawada,14.1470,79.8500,2
+SPE,Sullurpeta,Andhra Pradesh,SCR,Vijayawada,13.7000,80.0200,3
+EE,Eluru,Andhra Pradesh,SCR,Vijayawada,16.7150,81.1100,2
+TDD,Tadepalligudem,Andhra Pradesh,SCR,Vijayawada,16.8100,81.5300,3
+NDD,Nidadavolu Junction,Andhra Pradesh,SCR,Vijayawada,16.9000,81.6700,3
+RJY,Rajahmundry,Andhra Pradesh,SCR,Vijayawada,16.9900,81.7900,1
+SLO,Samalkot Junction,Andhra Pradesh,SCR,Vijayawada,17.0500,82.1700,2
+CCT,Kakinada Town,Andhra Pradesh,SCR,Vijayawada,16.9600,82.2300,2
+ANV,Annavaram,Andhra Pradesh,SCR,Vijayawada,17.2800,82.4000,3
+TUNI,Tuni,Andhra Pradesh,SCR,Vijayawada,17.3600,82.5500,3
+GNT,Guntur Junction,Andhra Pradesh,SCR,Guntur,16.2990,80.4430,1
+NDL,Nandyal,Andhra Pradesh,SCR,Guntur,15.4800,78.4800,3
+TPTY,Tirupati,Andhra Pradesh,SCR,Guntakal,13.6280,79.4190,1
+RU,Renigunta Junction,Andhra Pradesh,SCR,Guntakal,13.6370,79.5100,2
+CTO,Chittoor,Andhra Pradesh,SCR,Guntakal,13.2150,79.1000,3
+KDP,Kadapa,Andhra Pradesh,SCR,Guntakal,14.4700,78.8200,2
+YA,Yerraguntla Junction,Andhra Pradesh,SCR,Guntakal,14.6400,78.5400,3
+TU,Tadipatri,Andhra Pradesh,SCR,Guntakal,14.9100,78.0100,3
+GTL,Guntakal Junction,Andhra Pradesh,SCR,Guntakal,15.1700,77.3700,1
+ADD,Adoni,Andhra Pradesh,SCR,Guntakal,15.6300,77.2700,3
+RC,Raichur,Karnataka,SCR,Guntakal,16.2000,77.3500,2
+ATP,Anantapur,Andhra Pradesh,SCR,Guntakal,14.6800,77.6000,2
+DMM,Dharmavaram Junction,Andhra Pradesh,SCR,Guntakal,14.4150,77.7200,2
+HUP,Hindupur,Andhra Pradesh,SCR,Guntakal,13.8300,77.4900,3
+DHNE,Dhone Junction,Andhra Pradesh,SCR,Guntakal,15.4000,77.8700,3
+AKP,Anakapalle,Andhra Pradesh,ECoR,Waltair,17.6900,83.0000,3
+VSKP,Visakhapatnam,Andhra Pradesh,ECoR,Waltair,17.7220,83.2900,1
+VZM,Vizianagaram Junction,Andhra Pradesh,ECoR,Waltair,18.1100,83.4000,2
+RGDA,Rayagada,Odisha,ECoR,Waltair,19.1700,83.4100,2
+KRPU,Koraput,Odisha,ECoR,Waltair,18.8100,82.7100,3
+CHE,Srikakulam Road,Andhra Pradesh,ECoR,Khurda Road,18.3000,83.9000,3
+PSA,Palasa,Andhra Pradesh,ECoR,Khurda Road,18.7700,84.4100,3
+BAM,Brahmapur,Odisha,ECoR,Khurda Road,19.3150,84.7850,1
+CAP,Chatrapur,Odisha,ECoR,Khurda Road,19.3500,84.9800,3
+BALU,Balugaon,Odisha,ECoR,Khurda Road,19.7300,85.2100,3
+KUR,Khurda Road Junction,Odisha,ECoR,Khurda Road,20.1800,85.6200,1
+BBS,Bhubaneswar,Odisha,ECoR,Khurda Road,20.2700,85.8400,1
+PURI,Puri,Odisha,ECoR,Khurda Road,19.8100,85.8300,1
+CTC,Cuttack,Odisha,ECoR,Khurda Road,20.4700,85.8900,1
+ANGL,Angul,Odisha,ECoR,Khurda Road,20.8400,85.1000,3
+JJKR,Jajpur Keonjhar Road,Odisha,ECoR,Khurda Road,20.9600,86.1200,3
+BHC,Bhadrakh,Odisha,ECoR,Khurda Road,21.0600,86.5000,2
+SBP,Sambalpur,Odisha,ECoR,Sambalpur,21.4700,83.9700,2
+TIG,Titlagarh,Odisha,ECoR,Sambalpur,20.2900,83.1500,3
+BLGR,Balangir,Odisha,ECoR,Sambalpur,20.7100,83.4900,3
+MSMD,Mahasamund,Chhattisgarh,ECoR,Sambalpur,21.1000,82.1000,3
+BLS,Balasore,Odisha,SER,Kharagpur,21.4950,86.9300,2
+KGP,Kharagpur Junction,West Bengal,SER,Kharagpur,22.3400,87.3250,1
+MDN,Midnapore,West Bengal,SER,Kharagpur,22.4300,87.3200,3
+HLZ,Haldia,West Bengal,SER,Kharagpur,22.0600,88.0700,3
+SRC,Santragachi Junction,West Bengal,SER,Kharagpur,22.5800,88.2800,2
+TATA,Tatanagar Junction,Jharkhand,SER,Chakradharpur,22.7700,86.2000,1
+CKP,Chakradharpur,Jharkhand,SER,Chakradharpur,22.6800,85.6300,2
+ROU,Rourkela,Odisha,SER,Chakradharpur,22.2280,84.8650,1
+JSG,Jharsuguda Junction,Odisha,SER,Chakradharpur,21.8550,84.0060,2
+RNC,Ranchi,Jharkhand,SER,Ranchi,23.3500,85.3200,1
+HTE,Hatia,Jharkhand,SER,Ranchi,23.3100,85.2900,2
+MURI,Muri,Jharkhand,SER,Ranchi,23.3700,85.8600,3
+PRR,Purulia Junction,West Bengal,SER,Adra,23.3300,86.3600,2
+ADRA,Adra Junction,West Bengal,SER,Adra,23.4900,86.6800,2
+BQA,Bankura,West Bengal,SER,Adra,23.2300,87.0700,3
+BKSC,Bokaro Steel City,Jharkhand,SER,Adra,23.6600,86.1500,2
+HWH,Howrah Junction,West Bengal,ER,Howrah,22.5830,88.3420,1
+BDC,Bandel Junction,West Bengal,ER,Howrah,22.9200,88.3800,2
+BWN,Barddhaman Junction,West Bengal,ER,Howrah,23.2500,87.8700,1
+BHP,Bolpur Shantiniketan,West Bengal,ER,Howrah,23.6700,87.7200,3
+RPH,Rampurhat,West Bengal,ER,Howrah,24.1700,87.7800,3
+SDAH,Sealdah,West Bengal,ER,Sealdah,22.5680,88.3700,1
+KOAA,Kolkata,West Bengal,ER,Sealdah,22.6000,88.3800,1
+NH,Naihati Junction,West Bengal,ER,Sealdah,22.8900,88.4200,3
+KNJ,Krishnanagar City,West Bengal,ER,Sealdah,23.4000,88.5000,3
+DGR,Durgapur,West Bengal,ER,Asansol,23.4900,87.3200,2
+ASN,Asansol Junction,West Bengal,ER,Asansol,23.6800,86.9900,1
+JSME,Jasidih Junction,Jharkhand,ER,Asansol,24.5200,86.6500,2
+MDP,Madhupur Junction,Jharkhand,ER,Asansol,24.2600,86.6400,3
+MLDT,Malda Town,West Bengal,ER,Malda,25.0000,88.1400,1
+BGP,Bhagalpur,Bihar,ER,Malda,25.2400,87.0000,2
+JMP,Jamalpur Junction,Bihar,ER,Malda,25.3100,86.4900,3
+KIUL,Kiul Junction,Bihar,ER,Malda,25.1700,86.1000,2
+DHN,Dhanbad Junction,Jharkhand,ECR,Dhanbad,23.7900,86.4300,1
+GMO,Netaji SC Bose Gomoh,Jharkhand,ECR,Dhanbad,23.8700,86.1500,2
+PNME,Parasnath,Jharkhand,ECR,Dhanbad,23.9500,86.1700,3
+KQR,Koderma Junction,Jharkhand,ECR,Dhanbad,24.4600,85.6000,2
+GAYA,Gaya Junction,Bihar,ECR,Pt. Deen Dayal Upadhyaya,24.8000,85.0000,1
+DOS,Dehri on Sone,Bihar,ECR,Pt. Deen Dayal Upadhyaya,24.9100,84.1900,3
+SSM,Sasaram,Bihar,ECR,Pt. Deen Dayal Upadhyaya,24.9500,84.0200,3
+BBU,Bhabua Road,Bihar,ECR,Pt. Deen Dayal Upadhyaya,25.0400,83.6100,3
+DDU,Pt. Deen Dayal Upadhyaya Junction,Uttar Pradesh,ECR,Pt. Deen Dayal Upadhyaya,25.2800,83.1200,1
+PNBE,Patna Junction,Bihar,ECR,Danapur,25.6030,85.1370,1
+RJPB,Rajendra Nagar Terminal,Bihar,ECR,Danapur,25.6000,85.1600,2
+DNR,Danapur,Bihar,ECR,Danapur,25.5800,85.0500,2
+PPTA,Patliputra Junction,Bihar,ECR,Danapur,25.6200,85.0800,2
+ARA,Ara Junction,Bihar,ECR,Danapur,25.5600,84.6600,2
+BXR,Buxar,Bihar,ECR,Danapur,25.5700,83.9800,2
+MKA,Mokama,Bihar,ECR,Danapur,25.4000,85.9200,3
+BKP,Bakhtiyarpur Junction,Bihar,ECR,Danapur,25.4600,85.5300,3
+HJP,Hajipur Junction,Bihar,ECR,Sonpur,25.6900,85.2200,2
+SEE,Sonpur Junction,Bihar,ECR,Sonpur,25.7000,85.1800,2
+MFP,Muzaffarpur Junction,Bihar,ECR,Sonpur,26.1200,85.3900,1
+BJU,Barauni Junction,Bihar,ECR,Sonpur,25.4700,85.9700,1
+KGG,Khagaria Junction,Bihar,ECR,Sonpur,25.5000,86.4700,3
+MNE,Mansi Junction,Bihar,ECR,Sonpur,25.4900,86.6500,3
+SPJ,Samastipur Junction,Bihar,ECR,Samastipur,25.8600,85.7800,2
+DBG,Darbhanga Junction,Bihar,ECR,Samastipur,26.1500,85.9000,2
+RXL,Raxaul Junction,Bihar,ECR,Samastipur,26.9800,84.8500,2
+BTH,Bettiah,Bihar,ECR,Samastipur,26.8000,84.5000,3
+CPR,Chhapra Junction,Bihar,NER,Varanasi,25.7800,84.7300,1
+SV,Siwan Junction,Bihar,NER,Varanasi,26.2200,84.3600,2
+BCY,Banaras,Uttar Pradesh,NER,Varanasi,25.2900,82.9700,1
+MAU,Mau Junction,Uttar Pradesh,NER,Varanasi,25.9400,83.5600,2
+BUI,Ballia,Uttar Pradesh,NER,Varanasi,25.7600,84.1500,3
+DEOS,Deoria Sadar,Uttar Pradesh,NER,Varanasi,26.5000,83.7800,3
+GKP,Gorakhpur Junction,Uttar Pradesh,NER,Lucknow,26.7600,83.3800,1
+BST,Basti,Uttar Pradesh,NER,Lucknow,26.8000,82.7400,3
+GD,Gonda Junction,Uttar Pradesh,NER,Lucknow,27.1300,81.9600,2
+LJN,Lucknow Junction,Uttar Pradesh,NER,Lucknow,26.8300,80.9200,1
+KGM,Kathgodam,Uttarakhand,NER,Izzatnagar,29.2700,79.5400,2
+LKU,Lalkuan Junction,Uttarakhand,NER,Izzatnagar,29.0700,79.5200,3
+NDLS,New Delhi,Delhi,NR,Delhi,28.6430,77.2190,1
+DLI,Old Delhi Junction,Delhi,NR,Delhi,28.6610,77.2270,1
+NZM,Hazrat Nizamuddin,Delhi,NR,Delhi,28.5880,77.2530,1
+ANVT,Anand Vihar Terminal,Delhi,NR,Delhi,28.6500,77.3150,1
+DEE,Delhi Sarai Rohilla,Delhi,NR,Delhi,28.6640,77.1890,2
+GZB,Ghaziabad Junction,Uttar Pradesh,NR,Delhi,28.6500,77.4300,1
+GGN,Gurugram,Haryana,NR,Delhi,28.4900,77.0100,2
+PWL,Palwal,Haryana,NR,Delhi,28.1400,77.3300,3
+SNP,Sonipat,Haryana,NR,Delhi,28.9900,77.0200,3
+PNP,Panipat Junction,Haryana,NR,Delhi,29.3900,76.9700,2
+KUN,Karnal,Haryana,NR,Delhi,29.6900,76.9900,3
+KKDE,Kurukshetra Junction,Haryana,NR,Delhi,29.9700,76.8400,3
+MTC,Meerut City,Uttar Pradesh,NR,Delhi,28.9800,77.7000,2
+UMB,Ambala Cantt Junction,Haryana,NR,Ambala,30.3380,76.8300,1
+CDG,Chandigarh,Chandigarh,NR,Ambala,30.7000,76.8200,1
+KLK,Kalka,Haryana,NR,Ambala,30.8400,76.9400,2
+SML,Shimla,Himachal Pradesh,NR,Ambala,31.1000,77.1600,2
+SRE,Saharanpur Junction,Uttar Pradesh,NR,Ambala,29.9600,77.5500,2
+RPJ,Rajpura Junction,Punjab,NR,Ambala,30.4800,76.5900,3
+SIR,Sirhind Junction,Punjab,NR,Ambala,30.6400,76.3900,3
+BTI,Bathinda Junction,Punjab,NR,Ambala,30.2100,74.9400,2
+LDH,Ludhiana Junction,Punjab,NR,Firozpur,30.9120,75.8500,1
+PGW,Phagwara Junction,Punjab,NR,Firozpur,31.2200,75.7700,3
+JUC,Jalandhar City,Punjab,NR,Firozpur,31.3300,75.5800,1
+BEAS,Beas,Punjab,NR,Firozpur,31.5100,75.2900,3
+ASR,Amritsar Junction,Punjab,NR,Firozpur,31.6330,74.8650,1
+FZR,Firozpur Cantt,Punjab,NR,Firozpur,30.9300,74.6000,2
+PTKC,Pathankot Cantt,Punjab,NR,Firozpur,32.2600,75.6400,2
+JAT,Jammu Tawi,Jammu & Kashmir,NR,Firozpur,32.7050,74.8800,1
+UHP,Udhampur,Jammu & Kashmir,NR,Firozpur,32.9200,75.1400,3
+SVDK,Shri Mata Vaishno Devi Katra,Jammu & Kashmir,NR,Firozpur,32.9800,74.9300,1
+SINA,Srinagar,Jammu & Kashmir,NR,Firozpur,34.0200,74.8500,2
+MB,Moradabad Junction,Uttar Pradesh,NR,Moradabad,28.8300,78.7800,1
+BE,Bareilly Junction,Uttar Pradesh,NR,Moradabad,28.3500,79.4200,1
+SPN,Shahjahanpur,Uttar Pradesh,NR,Moradabad,27.8800,79.9100,3
+HRI,Hardoi,Uttar Pradesh,NR,Moradabad,27.4000,80.1300,3
+RK,Roorkee,Uttarakhand,NR,Moradabad,29.8700,77.8900,3
+HW,Haridwar Junction,Uttarakhand,NR,Moradabad,29.9500,78.1600,1
+DDN,Dehradun,Uttarakhand,NR,Moradabad,30.3150,78.0330,1
+YNRK,Yog Nagari Rishikesh,Uttarakhand,NR,Moradabad,30.0900,78.2700,3
+NBD,Najibabad Junction,Uttar Pradesh,NR,Moradabad,29.6200,78.3400,3
+LKO,Lucknow Charbagh,Uttar Pradesh,NR,Lucknow,26.8320,80.9230,1
+BSB,Varanasi Junction,Uttar Pradesh,NR,Lucknow,25.3270,82.9870,1
+AYC,Ayodhya Dham,Uttar Pradesh,NR,Lucknow,26.7900,82.2000,2
+SLN,Sultanpur Junction,Uttar Pradesh,NR,Lucknow,26.2600,82.0700,3
+JNU,Jaunpur Junction,Uttar Pradesh,NR,Lucknow,25.7500,82.6900,3
+PBH,Pratapgarh Junction,Uttar Pradesh,NR,Lucknow,25.9000,81.9500,3
+RBL,Raebareli Junction,Uttar Pradesh,NR,Lucknow,26.2300,81.2300,3
+CNB,Kanpur Central,Uttar Pradesh,NCR,Prayagraj,26.4540,80.3500,1
+PRYJ,Prayagraj Junction,Uttar Pradesh,NCR,Prayagraj,25.4450,81.8270,1
+FTP,Fatehpur,Uttar Pradesh,NCR,Prayagraj,25.9300,80.8000,3
+ETW,Etawah Junction,Uttar Pradesh,NCR,Prayagraj,26.7800,79.0200,2
+TDL,Tundla Junction,Uttar Pradesh,NCR,Prayagraj,27.2100,78.2300,2
+ALJN,Aligarh Junction,Uttar Pradesh,NCR,Prayagraj,27.8900,78.0700,2
+KRJ,Khurja Junction,Uttar Pradesh,NCR,Prayagraj,28.2400,77.8600,3
+MZP,Mirzapur,Uttar Pradesh,NCR,Prayagraj,25.1400,82.5700,3
+AGC,Agra Cantt,Uttar Pradesh,NCR,Agra,27.1580,77.9900,1
+AF,Agra Fort,Uttar Pradesh,NCR,Agra,27.1830,78.0230,2
+MTJ,Mathura Junction,Uttar Pradesh,NCR,Agra,27.4800,77.6800,1
+GWL,Gwalior Junction,Madhya Pradesh,NCR,Jhansi,26.2160,78.1820,1
+MRA,Morena,Madhya Pradesh,NCR,Jhansi,26.4900,77.9900,3
+DAA,Datia,Madhya Pradesh,NCR,Jhansi,25.6700,78.4600,3
+VGLJ,Virangana Lakshmibai Jhansi,Uttar Pradesh,NCR,Jhansi,25.4400,78.5700,1
+LAR,Lalitpur Junction,Uttar Pradesh,NCR,Jhansi,24.6900,78.4100,3
+BNDA,Banda Junction,Uttar Pradesh,NCR,Jhansi,25.4800,80.3300,3
+MBA,Mahoba Junction,Uttar Pradesh,NCR,Jhansi,25.2900,79.8700,3
+KURJ,Khajuraho,Madhya Pradesh,NCR,Jhansi,24.8300,79.9300,3
+BPL,Bhopal Junction,Madhya Pradesh,WCR,Bhopal,23.2660,77.4130,1
+RKMP,Rani Kamlapati,Madhya Pradesh,WCR,Bhopal,23.2300,77.4400,1
+BHS,Vidisha,Madhya Pradesh,WCR,Bhopal,23.5300,77.8100,3
+BINA,Bina Junction,Madhya Pradesh,WCR,Bhopal,24.1800,78.2000,2
+ET,Itarsi Junction,Madhya Pradesh,WCR,Bhopal,22.6150,77.7600,1
+NDPM,Narmadapuram,Madhya Pradesh,WCR,Bhopal,22.7500,77.7200,3
+PPI,Pipariya,Madhya Pradesh,WCR,Jabalpur,22.7600,78.3500,3
+NU,Narsinghpur,Madhya Pradesh,WCR,Jabalpur,22.9500,79.1900,3
+JBP,Jabalpur,Madhya Pradesh,WCR,Jabalpur,23.1650,79.9500,1
+KTE,Katni Junction,Madhya Pradesh,WCR,Jabalpur,23.8300,80.3900,2
+MYR,Maihar,Madhya Pradesh,WCR,Jabalpur,24.2600,80.7500,3
+STA,Satna,Madhya Pradesh,WCR,Jabalpur,24.5800,80.8300,2
+REWA,Rewa,Madhya Pradesh,WCR,Jabalpur,24.5300,81.3000,3
+KOTA,Kota Junction,Rajasthan,WCR,Kota,25.2140,75.8650,1
+SWM,Sawai Madhopur,Rajasthan,WCR,Kota,26.0200,76.3500,2
+GGC,Gangapur City,Rajasthan,WCR,Kota,26.4700,76.7200,3
+BTE,Bharatpur Junction,Rajasthan,WCR,Kota,27.2200,77.4900,2
+RMA,Ramganj Mandi,Rajasthan,WCR,Kota,24.6500,75.9400,3
+BWM,Bhawani Mandi,Rajasthan,WCR,Kota,24.4200,75.8300,3
+MMCT,Mumbai Central,Maharashtra,WR,Mumbai Central,18.9690,72.8190,1
+BDTS,Bandra Terminus,Maharashtra,WR,Mumbai Central,19.0620,72.8400,1
+BVI,Borivali,Maharashtra,WR,Mumbai Central,19.2290,72.8570,1
+VR,Virar,Maharashtra,WR,Mumbai Central,19.4550,72.8110,3
+DRD,Dahanu Road,Maharashtra,WR,Mumbai Central,19.9900,72.7400,3
+VAPI,Vapi,Gujarat,WR,Mumbai Central,20.3700,72.9100,2
+BL,Valsad,Gujarat,WR,Mumbai Central,20.6100,72.9300,2
+NVS,Navsari,Gujarat,WR,Mumbai Central,20.9500,72.9200,3
+ST,Surat,Gujarat,WR,Mumbai Central,21.2050,72.8400,1
+UDN,Udhna Junction,Gujarat,WR,Mumbai Central,21.1700,72.8500,2
+BH,Bharuch Junction,Gujarat,WR,Vadodara,21.7000,72.9800,2
+AKV,Ankleshwar Junction,Gujarat,WR,Vadodara,21.6200,73.0000,3
+BRC,Vadodara Junction,Gujarat,WR,Vadodara,22.3100,73.1800,1
+ANND,Anand Junction,Gujarat,WR,Vadodara,22.5600,72.9600,2
+ND,Nadiad Junction,Gujarat,WR,Vadodara,22.6900,72.8600,3
+GDA,Godhra Junction,Gujarat,WR,Vadodara,22.7800,73.6200,2
+ADI,Ahmedabad Junction,Gujarat,WR,Ahmedabad,23.0260,72.6010,1
+SBIB,Sabarmati,Gujarat,WR,Ahmedabad,23.0800,72.5900,2
+GNC,Gandhinagar Capital,Gujarat,WR,Ahmedabad,23.2200,72.6600,2
+MSH,Mahesana Junction,Gujarat,WR,Ahmedabad,23.6000,72.3900,2
+PNU,Palanpur Junction,Gujarat,WR,Ahmedabad,24.1700,72.4300,2
+VG,Viramgam Junction,Gujarat,WR,Ahmedabad,23.1200,72.0400,3
+GIMB,Gandhidham Junction,Gujarat,WR,Ahmedabad,23.0700,70.1300,2
+BHUJ,Bhuj,Gujarat,WR,Ahmedabad,23.2500,69.6700,2
+SUNR,Surendranagar,Gujarat,WR,Rajkot,22.7200,71.6400,3
+RJT,Rajkot Junction,Gujarat,WR,Rajkot,22.3100,70.8000,1
+JAM,Jamnagar,Gujarat,WR,Rajkot,22.4600,70.0600,2
+DWK,Dwarka,Gujarat,WR,Rajkot,22.2400,68.9700,2
+OKHA,Okha,Gujarat,WR,Rajkot,22.4700,69.0700,2
+PBR,Porbandar,Gujarat,WR,Bhavnagar,21.6400,69.6100,2
+BVC,Bhavnagar Terminus,Gujarat,WR,Bhavnagar,21.7700,72.1500,2
+JND,Junagadh Junction,Gujarat,WR,Bhavnagar,21.5200,70.4600,2
+VRL,Veraval,Gujarat,WR,Bhavnagar,20.9000,70.3700,2
+SMNH,Somnath,Gujarat,WR,Bhavnagar,20.8900,70.4000,3
+DHD,Dahod,Gujarat,WR,Ratlam,22.8300,74.2600,3
+RTM,Ratlam Junction,Madhya Pradesh,WR,Ratlam,23.3400,75.0400,1
+NAD,Nagda Junction,Madhya Pradesh,WR,Ratlam,23.4500,75.4200,2
+UJN,Ujjain Junction,Madhya Pradesh,WR,Ratlam,23.1750,75.7800,1
+INDB,Indore Junction,Madhya Pradesh,WR,Ratlam,22.7180,75.8700,1
+DWX,Dewas Junction,Madhya Pradesh,WR,Ratlam,22.9600,76.0500,3
+MDS,Mandsaur,Madhya Pradesh,WR,Ratlam,24.0700,75.0800,3
+COR,Chittaurgarh Junction,Rajasthan,WR,Ratlam,24.8800,74.6300,2
+JP,Jaipur Junction,Rajasthan,NWR,Jaipur,26.9200,75.7870,1
+DO,Dausa,Rajasthan,NWR,Jaipur,26.8900,76.3400,3
+BKI,Bandikui Junction,Rajasthan,NWR,Jaipur,27.0500,76.5700,3
+AWR,Alwar,Rajasthan,NWR,Jaipur,27.5600,76.6100,2
+FL,Phulera Junction,Rajasthan,NWR,Jaipur,26.8700,75.2400,3
+SIKR,Sikar Junction,Rajasthan,NWR,Jaipur,27.6100,75.1400,3
+AII,Ajmer Junction,Rajasthan,NWR,Ajmer,26.4550,74.6370,1
+BER,Beawar,Rajasthan,NWR,Ajmer,26.1000,74.3200,3
+MJ,Marwar Junction,Rajasthan,NWR,Ajmer,25.7300,73.6100,3
+FA,Falna,Rajasthan,NWR,Ajmer,25.2300,73.2400,3
+ABR,Abu Road,Rajasthan,NWR,Ajmer,24.4800,72.7800,2
+UDZ,Udaipur City,Rajasthan,NWR,Ajmer,24.5700,73.7000,1
+BHL,Bhilwara,Rajasthan,NWR,Ajmer,25.3500,74.6300,3
+JU,Jodhpur Junction,Rajasthan,NWR,Jodhpur,26.2840,73.0220,1
+JSM,Jaisalmer,Rajasthan,NWR,Jodhpur,26.9200,70.9100,2
+BME,Barmer,Rajasthan,NWR,Jodhpur,25.7500,71.3900,3
+MTD,Merta Road Junction,Rajasthan,NWR,Jodhpur,26.6600,74.0200,3
+BKN,Bikaner Junction,Rajasthan,NWR,Bikaner,28.0200,73.3100,1
+SGNR,Sri Ganganagar,Rajasthan,NWR,Bikaner,29.9100,73.8700,2
+HMH,Hanumangarh Junction,Rajasthan,NWR,Bikaner,29.5800,74.3300,3
+CUR,Churu,Rajasthan,NWR,Bikaner,28.3000,74.9600,3
+HSR,Hisar,Haryana,NWR,Bikaner,29.1600,75.7200,2
+RE,Rewari Junction,Haryana,NWR,Bikaner,28.1900,76.6200,2
+SBC,KSR Bengaluru,Karnataka,SWR,Bengaluru,12.9780,77.5700,1
+YPR,Yesvantpur Junction,Karnataka,SWR,Bengaluru,13.0230,77.5500,1
+SMVB,SMVT Bengaluru,Karnataka,SWR,Bengaluru,13.0000,77.6600,1
+KJM,Krishnarajapuram,Karnataka,SWR,Bengaluru,13.0000,77.6800,2
+BNC,Bengaluru Cantt,Karnataka,SWR,Bengaluru,12.9940,77.5980,2
+BWT,Bangarapet Junction,Karnataka,SWR,Bengaluru,12.9900,78.1800,2
+KPN,Kuppam,Andhra Pradesh,SWR,Bengaluru,12.7500,78.3400,3
+TK,Tumakuru,Karnataka,SWR,Bengaluru,13.3400,77.1000,2
+RMGM,Ramanagaram,Karnataka,SWR,Bengaluru,12.7200,77.2800,3
+MYA,Mandya,Karnataka,SWR,Bengaluru,12.5200,76.9000,3
+MYS,Mysuru Junction,Karnataka,SWR,Mysuru,12.3150,76.6450,1
+ASK,Arsikere Junction,Karnataka,SWR,Mysuru,13.3100,76.2500,2
+DVG,Davangere,Karnataka,SWR,Mysuru,14.4700,75.9200,2
+HRR,Harihar,Karnataka,SWR,Mysuru,14.5100,75.8000,3
+SMET,Shivamogga Town,Karnataka,SWR,Mysuru,13.9300,75.5700,2
+HAS,Hassan,Karnataka,SWR,Mysuru,13.0000,76.1000,2
+SKLR,Sakleshpur,Karnataka,SWR,Mysuru,12.9400,75.7900,3
+RNR,Ranibennur,Karnataka,SWR,Hubballi,14.6100,75.6200,3
+HVR,Haveri,Karnataka,SWR,Hubballi,14.7900,75.4000,3
+UBL,SSS Hubballi Junction,Karnataka,SWR,Hubballi,15.3500,75.1500,1
+DWR,Dharwad,Karnataka,SWR,Hubballi,15.4600,75.0100,2
+LD,Londa Junction,Karnataka,SWR,Hubballi,15.4700,74.5100,3
+BGM,Belagavi,Karnataka,SWR,Hubballi,15.8500,74.5000,2
+GDG,Gadag Junction,Karnataka,SWR,Hubballi,15.4200,75.6300,2
+HPT,Hosapete Junction,Karnataka,SWR,Hubballi,15.2700,76.3900,2
+BAY,Ballari Junction,Karnataka,SWR,Hubballi,15.1400,76.9200,2
+KBL,Koppal,Karnataka,SWR,Hubballi,15.3500,76.1500,3
+BJP,Vijayapura,Karnataka,SWR,Hubballi,16.8300,75.7100,2
+BGK,Bagalkot,Karnataka,SWR,Hubballi,16.1800,75.7000,3
+VSG,Vasco da Gama,Goa,SWR,Hubballi,15.4000,73.8100,2
+BSP,Bilaspur Junction,Chhattisgarh,SECR,Bilaspur,22.0790,82.1500,1
+CPH,Champa Junction,Chhattisgarh,SECR,Bilaspur,22.0400,82.6500,3
+RIG,Raigarh,Chhattisgarh,SECR,Bilaspur,21.9000,83.4000,2
+KRBA,Korba,Chhattisgarh,SECR,Bilaspur,22.3600,82.7300,3
+PND,Pendra Road,Chhattisgarh,SECR,Bilaspur,22.7700,81.9500,3
+APR,Anuppur Junction,Madhya Pradesh,SECR,Bilaspur,23.1000,81.6900,3
+SDL,Shahdol,Madhya Pradesh,SECR,Bilaspur,23.3000,81.3600,3
+R,Raipur Junction,Chhattisgarh,SECR,Raipur,21.2560,81.6300,1
+DURG,Durg Junction,Chhattisgarh,SECR,Raipur,21.1900,81.2800,1
+TLD,Tilda Neora,Chhattisgarh,SECR,Raipur,21.5500,81.7900,3
+BYT,Bhatapara,Chhattisgarh,SECR,Raipur,21.7300,81.9500,3
+RJN,Rajnandgaon,Chhattisgarh,SECR,Nagpur SEC,21.1000,81.0300,3
+G,Gondia Junction,Maharashtra,SECR,Nagpur SEC,21.4600,80.1900,2
+TMR,Tumsar Road,Maharashtra,SECR,Nagpur SEC,21.3700,79.7400,3
+BRD,Bhandara Road,Maharashtra,SECR,Nagpur SEC,21.1800,79.6500,3
+CWA,Chhindwara Junction,Madhya Pradesh,SECR,Nagpur SEC,22.0500,78.9400,3
+NJP,New Jalpaiguri,West Bengal,NFR,Katihar,26.6830,88.4430,1
+SGUJ,Siliguri Junction,West Bengal,NFR,Katihar,26.7100,88.4300,2
+KIR,Katihar Junction,Bihar,NFR,Katihar,25.5400,87.5700,1
+KNE,Kishanganj,Bihar,NFR,Katihar,26.1000,87.9500,2
+BOE,Barsoi Junction,Bihar,NFR,Katihar,25.6300,87.9500,3
+PRNA,Purnia Junction,Bihar,NFR,Katihar,25.7800,87.4700,3
+NOQ,New Alipurduar,West Bengal,NFR,Alipurduar,26.5000,89.5400,2
+NCB,New Cooch Behar,West Bengal,NFR,Alipurduar,26.3200,89.4700,2
+KOJ,Kokrajhar,Assam,NFR,Alipurduar,26.4000,90.2700,3
+NBQ,New Bongaigaon,Assam,NFR,Rangiya,26.4800,90.5600,1
+GLPT,Goalpara Town,Assam,NFR,Rangiya,26.1700,90.6200,3
+RNY,Rangiya Junction,Assam,NFR,Rangiya,26.4700,91.6300,2
+KYQ,Kamakhya,Assam,NFR,Rangiya,26.1700,91.7000,1
+NHLN,Naharlagun,Arunachal Pradesh,NFR,Rangiya,27.1000,93.7000,3
+GHY,Guwahati,Assam,NFR,Lumding,26.1820,91.7520,1
+HJI,Hojai,Assam,NFR,Lumding,26.0000,92.8600,3
+LMG,Lumding Junction,Assam,NFR,Lumding,25.7500,93.1700,1
+DPU,Diphu,Assam,NFR,Lumding,25.8300,93.4300,3
+DMV,Dimapur,Nagaland,NFR,Lumding,25.9000,93.7300,2
+BPB,Badarpur Junction,Assam,NFR,Lumding,24.8700,92.6000,3
+SCL,Silchar,Assam,NFR,Lumding,24.8100,92.8000,2
+AGTL,Agartala,Tripura,NFR,Lumding,23.7900,91.2800,2
+FKG,Furkating Junction,Assam,NFR,Tinsukia,26.5000,93.9000,3
+MXN,Mariani Junction,Assam,NFR,Tinsukia,26.6600,94.3100,3
+JTTN,Jorhat Town,Assam,NFR,Tinsukia,26.7500,94.2100,2
+NTSK,New Tinsukia Junction,Assam,NFR,Tinsukia,27.4900,95.3600,2
+DBRG,Dibrugarh,Assam,NFR,Tinsukia,27.4700,94.9100,1
