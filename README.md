@@ -216,3 +216,8 @@ YATRAX_PLAN.md     the original plan
 Station and train data: [datameet/railways](https://github.com/datameet/railways), released under CC0.
 Everything about passengers, staff, bookings and money is generated. Indian Railways, IRCTC, RailMadad and
 the railway names used here belong to their owners; YatraX is not affiliated with them.
+
+## License
+
+The code is released under the [MIT License](LICENSE), © 2026 Kevin Mathew T. The station and train data
+come from datameet under CC0 (see Credits).
