@@ -1,7 +1,7 @@
 "use client";
 
 import type { CalendarResult, ClassOption, Festival, Quota, SearchTrain } from "@yatrax/api-client";
-import { Alert, AvailabilityPill, Badge, Button, Spinner, availabilityTone, cn, useAsync, useYatrax } from "@yatrax/ui";
+import { Alert, AvailabilityPill, Badge, Button, Spinner, availabilityTone, cn, useAsync, useT, useYatrax } from "@yatrax/ui";
 import Link from "next/link";
 import { DAY_LETTERS, clockIST, dayLabel, duration, rupees } from "./format";
 
@@ -19,6 +19,7 @@ export function TrainCard({
   onSelect: (cls: string | null) => void;
   festivals: Festival[];
 }) {
+  const tr = useT().t;
   const open = t.classes.find((c) => c.code === selected) ?? null;
   return (
     <article className="overflow-hidden rounded-xl border border-line bg-surface shadow-sm">
@@ -27,7 +28,7 @@ export function TrainCard({
           <span className="font-mono text-base font-semibold">{t.number}</span>
           <h2 className="text-base font-semibold">{t.name}</h2>
           <Badge tone={typeTone[t.type] ?? "neutral"}>{t.type_name}</Badge>
-          {t.pantry && <Badge tone="ok">Pantry</Badge>}
+          {t.pantry && <Badge tone="ok">{tr("train.pantry")}</Badge>}
           {t.flexi && <Badge tone="neutral">Flexi fare</Badge>}
           <span className="ml-auto inline-flex items-center gap-3">
             <span className="inline-flex gap-0.5 font-mono text-[11px]" aria-label="Running days">
@@ -41,7 +42,7 @@ export function TrainCard({
               href={`/train/${t.number}?from=${t.from.code}&to=${t.to.code}`}
               className="text-sm font-medium text-[var(--accent)] hover:underline"
             >
-              Schedule & coaches
+              {tr("train.schedule")}
             </Link>
           </span>
         </div>
@@ -147,6 +148,7 @@ function FareBreakdown({ c }: { c: ClassOption }) {
 const BOOKABLE = new Set(["AVL", "RAC", "WL"]);
 
 function BookButton({ t, c, quota, date }: { t: SearchTrain; c: ClassOption; quota: Quota; date: string }) {
+  const tr = useT().t;
   const href = `/book?${new URLSearchParams({ train: t.number, from: t.from.code, to: t.to.code, date, class: c.code, quota })}`;
   if (!BOOKABLE.has(c.availability.code)) {
     return (
@@ -157,7 +159,7 @@ function BookButton({ t, c, quota, date }: { t: SearchTrain; c: ClassOption; quo
   }
   return (
     <Link href={href} className="mt-4 flex h-10 w-full items-center justify-center rounded-lg bg-[var(--accent)] text-sm font-medium text-white hover:brightness-110">
-      {c.availability.code === "AVL" ? "Book now" : `Book (${c.availability.label})`}
+      {c.availability.code === "AVL" ? tr("train.book") : `${tr("train.book")} (${c.availability.label})`}
     </Link>
   );
 }
@@ -200,7 +202,7 @@ function ClassPanel({ t, c, quota, date, festivals }: { t: SearchTrain; c: Class
           </div>
         )}
         <p className="mt-2 text-xs text-muted">
-          Waitlist estimates are rough. The trained confirmation model arrives in Phase 10.
+          Waitlist chances are estimates from the waitlist position, the days left and how this train usually fills.
         </p>
       </div>
     </div>

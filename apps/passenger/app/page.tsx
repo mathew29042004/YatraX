@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@yatrax/ui";
 import Link from "next/link";
 import { SearchForm, searchHref } from "@/components/search-form";
 import { SiteHeader } from "@/components/site-header";
@@ -16,15 +17,16 @@ const POPULAR: [string, string, string, string][] = [
 
 export default function SearchHome() {
   const inAWeek = addDays(todayIST(), 7);
+  const { t } = useT();
   return (
     <>
       <SiteHeader />
       <main id="main" tabIndex={-1}>
         <section className="bg-gradient-to-b from-brand-900 to-brand-700 px-4 pb-24 pt-12 text-white">
           <div className="mx-auto max-w-6xl">
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Where are you travelling?</h1>
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t("home.title")}</h1>
             <p className="mt-2 max-w-xl text-brand-100">
-              Search every train on the network: timetables, fares by class and quota, and availability for the next 60 days.
+              {t("home.subtitle")}
             </p>
           </div>
         </section>
@@ -32,7 +34,7 @@ export default function SearchHome() {
           <SearchForm />
         </section>
         <section className="mx-auto max-w-6xl px-4 py-10">
-          <h2 className="mb-3 text-sm font-semibold text-muted">Popular routes</h2>
+          <h2 className="mb-3 text-sm font-semibold text-muted">{t("home.popular")}</h2>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {POPULAR.map(([f, t, fn, tn]) => (
               <Link
@@ -50,7 +52,7 @@ export default function SearchHome() {
             ))}
           </div>
           <p className="mt-8 text-xs text-muted">
-            All trains, people and availability on YatraX are synthetic. Availability comes from a demand model until the booking core arrives in Phase 2.
+            {t("home.disclaimer")}
           </p>
         </section>
       </main>

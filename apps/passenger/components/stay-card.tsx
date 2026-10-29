@@ -2,7 +2,7 @@
 
 import type { Booking, Stay, StayOption, StayUnit } from "@yatrax/api-client";
 import { ApiError } from "@yatrax/api-client";
-import { Alert, Badge, Button, Card, CardTitle, Input, Label, cn, useYatrax } from "@yatrax/ui";
+import { Alert, Badge, Button, Card, CardTitle, Input, Label, cn, useT, useYatrax } from "@yatrax/ui";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { rupees } from "./format";
 
@@ -14,6 +14,7 @@ const when = (iso: string) => new Date(iso).toLocaleString("en-IN", { dateStyle:
 /** Retiring rooms, dormitory beds and cloak-room lockers at either end of the journey. */
 export function StayCard({ b }: { b: Booking }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const ends = [
     { code: b.from, name: b.from_name, at: new Date(new Date(b.departure).getTime() - 6 * 3600_000).toISOString(), hint: "before you leave" },
     { code: b.to, name: b.to_name, at: b.arrival, hint: "after you arrive" },
@@ -54,7 +55,7 @@ export function StayCard({ b }: { b: Booking }) {
 
   return (
     <Card>
-      <CardTitle hint="booked against this ticket">Retiring room or cloak room</CardTitle>
+      <CardTitle hint="booked against this ticket">{t("ticket.stay")}</CardTitle>
       <div className="flex flex-wrap gap-2">
         {ends.map((e, i) => (
           <button

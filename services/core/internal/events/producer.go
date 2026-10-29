@@ -21,7 +21,7 @@ func NewProducer(brokers []string) (*Producer, error) {
 	return &Producer{client: c}, nil
 }
 
-// Publish sends asynchronously. Phase 0 events are informational, so a failure is
+// Publish sends asynchronously. Events sent this way (sign-ins) are informational, so a failure is
 // logged and counted rather than failing the request.
 func (p *Producer) Publish(ctx context.Context, topic, key string, v any) {
 	b, err := json.Marshal(v)

@@ -11,7 +11,7 @@ import (
 
 // SimulateCancellations cancels n confirmed bot (background) passengers' bookings on
 // a run, as other travellers would, and promotes the queue. Operations staff use it
-// to show the waitlist moving; the live simulation (Phase 5) does this continuously.
+// to show the waitlist moving.
 func (s *Service) SimulateCancellations(ctx context.Context, train string, originDate time.Time, class string, n int) (int, []Promotion, error) {
 	t := s.Net.Trains[train]
 	if t == nil || t.Capacity(s.Net, class) == 0 {

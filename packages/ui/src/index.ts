@@ -8,3 +8,4 @@ export * from "./components/notifications";
 export * from "./components/live";
 export * from "./components/complaints";
 export * from "./components/textsize";
+export * from "./components/i18n";

@@ -1,7 +1,7 @@
 "use client";
 
 import type { Booking } from "@yatrax/api-client";
-import { Alert, Badge, RequireRole, Spinner, useAsync, useYatrax } from "@yatrax/ui";
+import { Alert, Badge, RequireRole, Spinner, useAsync, useT, useYatrax } from "@yatrax/ui";
 import Link from "next/link";
 import { clockIST, dayLabel, rupees } from "@/components/format";
 import { SiteHeader } from "@/components/site-header";
@@ -53,11 +53,12 @@ function Trips() {
 }
 
 export default function Page() {
+  const { t } = useT();
   return (
     <>
       <SiteHeader />
       <main id="main" tabIndex={-1} className="mx-auto max-w-3xl px-4 py-6">
-        <h1 className="mb-4 text-xl font-semibold">My trips</h1>
+        <h1 className="mb-4 text-xl font-semibold">{t("trips.title")}</h1>
         <RequireRole>{() => <Trips />}</RequireRole>
       </main>
     </>

@@ -1,10 +1,10 @@
 // Package availability answers "how many berths are left?" for a train, date,
 // class and quota.
 //
-// Phase 1 has no seat inventory yet, so Simulated derives a believable answer from a
-// demand model (days to travel, weekday, festivals, train type, class). It is
-// deterministic, so the same query always gives the same answer. The booking core in
-// Phase 2 replaces it with real inventory behind the same Provider interface.
+// Runs nobody has opened yet have no seat inventory, so Simulated derives a believable
+// answer from a demand model (days to travel, weekday, festivals, train type, class). It
+// is deterministic, so the same query always gives the same answer. Once a run exists,
+// the booking core answers from real inventory behind the same Provider interface.
 package availability
 
 import (
@@ -52,7 +52,7 @@ type Status struct {
 	Label string `json:"label"`
 	// OpensAt is set for NOT_OPEN and TATKAL_NOT_OPEN.
 	OpensAt *time.Time `json:"opens_at,omitempty"`
-	// ConfirmChance is a rough 0–100 estimate. The trained PNR model replaces it in Phase 10.
+	// ConfirmChance is a rough 0–100 estimate from the waitlist position, days left and demand.
 	ConfirmChance int `json:"confirm_chance"`
 }
 

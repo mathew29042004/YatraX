@@ -124,6 +124,9 @@ the control room. That's YatraX."
 - **At the station:** book a retiring room against the ticket, then check the guest in at the Station app's
   counter; send a group request for a pilgrimage and approve it at the station desk.
 
+- **In your language:** switch the passenger app's language picker to தமிழ் or हिन्दी — search, results,
+  booking and the ticket follow.
+
 ## Shot list
 
 | # | Shot | Length |

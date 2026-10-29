@@ -1,11 +1,11 @@
 "use client";
 
 import type { Festival, Quota, SearchParams, SearchResult, SearchTrain } from "@yatrax/api-client";
-import { Alert, AvailabilityPill, Spinner, cn, useAsync, useYatrax } from "@yatrax/ui";
+import { Alert, AvailabilityPill, Spinner, cn, useAsync, useT, useYatrax } from "@yatrax/ui";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { dayLabel, hourIST } from "./format";
-import { QUOTAS, searchHref } from "./search-form";
+import { searchHref } from "./search-form";
 import { Alternatives } from "./alternatives";
 import { TrainCard } from "./train-card";
 
@@ -42,6 +42,7 @@ function toggle<T>(set: Set<T>, v: T) {
 
 export function Results({ params }: { params: SearchParams }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const { data, error } = useAsync<SearchResult>(() => client.search(params), [client, JSON.stringify(params)]);
   const festivals = useAsync<Festival[]>(() => client.festivals(), [client]).data ?? [];
 
@@ -87,7 +88,6 @@ export function Results({ params }: { params: SearchParams }) {
     : runningWith.length > 0 && !runningWith.some((t) => t.classes.some((c) => c.code === wanted && c.availability.code === "AVL")) ? wanted : null;
 
   const gridClass = params.class || [...classes][0] || allClasses[0];
-  const quotaName = QUOTAS.find(([q]) => q === data.quota)?.[1];
 
   return (
     <div className="space-y-4">
@@ -95,20 +95,20 @@ export function Results({ params }: { params: SearchParams }) {
         <h1 className="text-lg font-semibold">
           {data.from.name} → {data.to.name}
           <span className="ml-2 text-sm font-normal text-muted">
-            {dayLabel(data.date)} · {quotaName} quota · {visible.length} of {data.trains.length} trains
+            {dayLabel(data.date)} · {t("results.quota", { quota: t(`quota.${data.quota}`) })} · {t("results.count", { shown: visible.length, total: data.trains.length })}
           </span>
         </h1>
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as Sort)}
-          aria-label="Sort trains"
+          aria-label={t("results.sort")}
           className="h-9 rounded-lg border border-line bg-surface px-2 text-sm"
         >
-          <option value="departure">Sort: departure</option>
-          <option value="arrival">Sort: arrival</option>
-          <option value="duration">Sort: fastest</option>
-          <option value="fare">Sort: cheapest</option>
-          <option value="availability">Sort: best chance of a berth</option>
+          <option value="departure">{t("results.sort.departure")}</option>
+          <option value="arrival">{t("results.sort.arrival")}</option>
+          <option value="duration">{t("results.sort.duration")}</option>
+          <option value="fare">{t("results.sort.fare")}</option>
+          <option value="availability">{t("results.sort.availability")}</option>
         </select>
       </div>
 
@@ -116,14 +116,13 @@ export function Results({ params }: { params: SearchParams }) {
 
       {(data.from_stations.length > 1 || data.to_stations.length > 1) && (
         <Alert tone="info">
-          Including nearby stations. From: {data.from_stations.map((s) => s.name).join(", ")}. To:{" "}
-          {data.to_stations.map((s) => s.name).join(", ")}.
+          {t("results.nearby", { from: data.from_stations.map((s) => s.name).join(", "), to: data.to_stations.map((s) => s.name).join(", ") })}
         </Alert>
       )}
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-line bg-surface p-3">
         <div className="flex flex-wrap items-center gap-1">
-          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">Class</span>
+          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">{t("filter.class")}</span>
           {allClasses.map((c) => (
             <Chip key={c} on={classes.has(c)} onClick={() => setClasses(toggle(classes, c))}>
               {c}
@@ -131,7 +130,7 @@ export function Results({ params }: { params: SearchParams }) {
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-1">
-          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">Type</span>
+          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">{t("filter.type")}</span>
           {allTypes.map(([code, name]) => (
             <Chip key={code} on={types.has(code)} onClick={() => setTypes(toggle(types, code))}>
               {name}
@@ -139,16 +138,16 @@ export function Results({ params }: { params: SearchParams }) {
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-1">
-          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">Departs</span>
+          <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted">{t("filter.departs")}</span>
           {TIME_SLOTS.map(([label], i) => (
             <Chip key={label} on={slots.has(i)} onClick={() => setSlots(toggle(slots, i))}>
-              {label}
+              {t(`slot.${i}`)}
             </Chip>
           ))}
         </div>
         <label className="inline-flex cursor-pointer items-center gap-2 text-sm">
           <input type="checkbox" checked={onlyAvailable} onChange={(e) => setOnlyAvailable(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-          Only AVL / RAC
+          {t("results.onlyAvailable")}
         </label>
       </div>
 

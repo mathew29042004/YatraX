@@ -77,7 +77,7 @@ func TestGenerateIsDeterministicAndValid(t *testing.T) {
 }
 
 func TestSegmentSharingRouteExists(t *testing.T) {
-	// The Phase 2 demo books MAS→SA and SA→ERN on one berth; some train must call at all three.
+	// The booking demo shares one berth MAS→SA and SA→ERN; some train must call at all three.
 	w, err := Generate(1, 10)
 	if err != nil {
 		t.Fatal(err)

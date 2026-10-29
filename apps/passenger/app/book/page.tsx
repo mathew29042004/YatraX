@@ -2,7 +2,7 @@
 
 import type { CalendarResult, PassengerInput, Quota, SavedPassenger, SeatMap } from "@yatrax/api-client";
 import { ApiError } from "@yatrax/api-client";
-import { Alert, AvailabilityPill, Badge, Button, Card, CardTitle, Input, RequireRole, Spinner, cn, useAsync, useYatrax } from "@yatrax/ui";
+import { Alert, AvailabilityPill, Badge, Button, Card, CardTitle, Input, RequireRole, Spinner, cn, useAsync, useT, useYatrax } from "@yatrax/ui";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useMemo, useRef, useState } from "react";
 import { dayLabel, rupees } from "@/components/format";
@@ -20,6 +20,7 @@ const blank = (): PassengerInput => ({ name: "", age: 30, gender: "F", berth_pre
 
 function BookForm() {
   const { client } = useYatrax();
+  const { t } = useT();
   const router = useRouter();
   const qs = useSearchParams();
   const train = qs.get("train") ?? "";
@@ -107,10 +108,10 @@ function BookForm() {
     <div className="grid gap-5 lg:grid-cols-[1fr_20rem]">
       <div className="space-y-5">
         <Card>
-          <CardTitle>Passengers</CardTitle>
+          <CardTitle>{t("book.passengers")}</CardTitle>
           {saved.length > 0 && (
             <div className="mb-3 flex flex-wrap items-center gap-1.5 text-sm">
-              <span className="text-xs text-muted">Add saved:</span>
+              <span className="text-xs text-muted">{t("book.addSaved")}</span>
               {saved.map((s) => (
                 <button
                   key={s.id}
@@ -130,12 +131,12 @@ function BookForm() {
           <div className="space-y-2">
             {pax.map((p, i) => (
               <div key={i} className="grid grid-cols-2 gap-2 rounded-lg border border-line p-2 sm:grid-cols-[1fr_5rem_7rem_9rem_auto]">
-                <Input aria-label={`Passenger ${i + 1} name`} placeholder="Full name" value={p.name} onChange={(e) => update(i, { name: e.target.value })} className="col-span-2 sm:col-span-1" />
-                <Input aria-label="Age" type="number" min={5} max={125} value={p.age} onChange={(e) => update(i, { age: Number(e.target.value) })} />
-                <select aria-label="Gender" value={p.gender} onChange={(e) => update(i, { gender: e.target.value as PassengerInput["gender"] })} className="h-10 rounded-lg border border-line bg-surface px-2 text-sm">
-                  <option value="F">Female</option>
-                  <option value="M">Male</option>
-                  <option value="O">Other</option>
+                <Input aria-label={`Passenger ${i + 1} name`} placeholder={t("book.name")} value={p.name} onChange={(e) => update(i, { name: e.target.value })} className="col-span-2 sm:col-span-1" />
+                <Input aria-label={t("book.age")} type="number" min={5} max={125} value={p.age} onChange={(e) => update(i, { age: Number(e.target.value) })} />
+                <select aria-label={t("book.gender")} value={p.gender} onChange={(e) => update(i, { gender: e.target.value as PassengerInput["gender"] })} className="h-10 rounded-lg border border-line bg-surface px-2 text-sm">
+                  <option value="F">{t("gender.F")}</option>
+                  <option value="M">{t("gender.M")}</option>
+                  <option value="O">{t("gender.O")}</option>
                 </select>
                 <select aria-label="Berth preference" value={p.berth_pref} onChange={(e) => update(i, { berth_pref: e.target.value })} className="h-10 rounded-lg border border-line bg-surface px-2 text-sm">
                   {prefOptions.map(([v, l]) => (
@@ -155,46 +156,46 @@ function BookForm() {
                 )}
                 {quota === "HP" && i === 1 && <p className="col-span-2 self-center text-xs text-muted sm:col-span-4">Escort: travels at the same concession.</p>}
                 <button type="button" onClick={() => setPax(pax.filter((_, j) => j !== i))} disabled={pax.length === 1} className="text-sm text-muted hover:text-danger disabled:opacity-30" aria-label={`Remove passenger ${i + 1}`}>
-                  Remove
+                  {t("book.remove")}
                 </button>
               </div>
             ))}
           </div>
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
             <Button variant="secondary" size="sm" onClick={() => setPax([...pax, blank()])} disabled={pax.length >= maxPax}>
-              + Add passenger ({pax.length}/{maxPax})
+              {t("book.add", { n: pax.length, max: maxPax })}
             </Button>
-            <span className="text-xs text-muted">Children under 5 travel free without a ticket.</span>
+            <span className="text-xs text-muted">{t("book.childrenFree")}</span>
           </div>
         </Card>
 
         <Card>
-          <CardTitle>Preferences</CardTitle>
+          <CardTitle>{t("book.prefs")}</CardTitle>
           <div className="space-y-2 text-sm">
             <label className="flex cursor-pointer items-center gap-2">
               <input type="checkbox" checked={together} onChange={(e) => setTogether(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-              Seat us together (same bay)
+              {t("book.together")}
             </label>
             <label className="flex cursor-pointer items-center gap-2">
               <input type="checkbox" checked={onlyConfirmed} onChange={(e) => setOnlyConfirmed(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-              Book only if every passenger gets a confirmed berth
+              {t("book.onlyConfirmed")}
             </label>
             <label className="flex cursor-pointer items-center gap-2">
               <input type="checkbox" checked={autoUpgrade} onChange={(e) => setAutoUpgrade(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-              Upgrade me to a higher class for free if berths are left when the chart is prepared
+              {t("book.autoUpgrade")}
             </label>
             <label className="flex cursor-pointer items-center gap-2">
               <input type="checkbox" checked={insurance} onChange={(e) => setInsurance(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-              Travel insurance: ₹1 per passenger, cover up to ₹10 lakh
+              {t("book.insurance")}
             </label>
           </div>
         </Card>
 
         <Card>
-          <CardTitle hint="Optional: we pick the best berths if you skip this">Choose berths</CardTitle>
+          <CardTitle hint={t("book.chooseHint")}>{t("book.chooseBerths")}</CardTitle>
           {!choose ? (
             <Button variant="secondary" onClick={openSeatMap}>
-              Open seat map
+              {t("book.openSeatMap")}
             </Button>
           ) : !map ? (
             <Spinner label="Loading seat map" />
@@ -234,7 +235,7 @@ function BookForm() {
               )}
               <dl className="mt-4 space-y-1 border-t border-line pt-3 text-sm">
                 <div className="flex justify-between">
-                  <dt className="text-muted">Fare per passenger</dt>
+                  <dt className="text-muted">{t("book.farePer")}</dt>
                   <dd className="tabular-nums">{rupees(perHead)}</dd>
                 </div>
                 <div className="flex justify-between">
@@ -243,12 +244,12 @@ function BookForm() {
                 </div>
                 {insurance && (
                   <div className="flex justify-between">
-                    <dt className="text-muted">Travel insurance</dt>
+                    <dt className="text-muted">{t("book.insuranceLine")}</dt>
                     <dd className="tabular-nums">{rupees(pax.length)}</dd>
                   </div>
                 )}
                 <div className="flex justify-between border-t border-line pt-2 text-base font-semibold">
-                  <dt>Total</dt>
+                  <dt>{t("book.total")}</dt>
                   <dd className="tabular-nums">{rupees(perHead * pax.length + (insurance ? pax.length : 0))}</dd>
                 </div>
               </dl>
@@ -260,9 +261,9 @@ function BookForm() {
             </div>
           )}
           <Button size="lg" className={cn("mt-4 w-full")} disabled={busy || !info.data} onClick={submit}>
-            {busy ? "Holding berths…" : "Hold berths & continue"}
+            {busy ? t("book.holding") : t("book.hold")}
           </Button>
-          <p className="mt-2 text-xs text-muted">Berths are held for 10 minutes while you pay.</p>
+          <p className="mt-2 text-xs text-muted">{t("book.holdNote")}</p>
         </Card>
       </div>
     </div>

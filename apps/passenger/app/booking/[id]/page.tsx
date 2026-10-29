@@ -2,7 +2,7 @@
 
 import type { Booking, BookingPassenger } from "@yatrax/api-client";
 import { ApiError } from "@yatrax/api-client";
-import { Alert, Badge, Button, Card, RequireRole, Spinner, cn, useYatrax } from "@yatrax/ui";
+import { Alert, Badge, Button, Card, RequireRole, Spinner, cn, useT, useYatrax } from "@yatrax/ui";
 import QRCode from "qrcode";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
@@ -112,6 +112,7 @@ function PassengerTable({ b }: { b: Booking }) {
 
 function Ticket({ b }: { b: Booking }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const [svg, setSvg] = useState<string | null>(null);
   useEffect(() => {
     client
@@ -131,15 +132,15 @@ function Ticket({ b }: { b: Booking }) {
         <div className="mt-3 flex flex-wrap gap-1.5 text-xs">
           {b.carbon && b.carbon.saved_kg > 0 && (
             <Badge tone="ok" title={`About ${b.carbon.train_kg} kg CO₂ by train against ${b.carbon.flight_kg} kg flying`}>
-              🌱 {b.carbon.saved_kg} kg CO₂ saved vs flying
+              🌱 {t("ticket.co2", { kg: b.carbon.saved_kg })}
             </Badge>
           )}
           {b.insurance_premium > 0 && <Badge tone="brand">Insured · ₹10 lakh cover</Badge>}
-          {b.points_earned > 0 && <Badge tone="saffron">+{b.points_earned} Rewards points</Badge>}
+          {b.points_earned > 0 && <Badge tone="saffron">{t("ticket.points", { n: b.points_earned })}</Badge>}
           {b.auto_upgrade && <Badge tone="neutral">Free upgrade if berths are left at chart time</Badge>}
         </div>
         <Link href={`/booking/${b.id}/invoice`} className="mt-2 inline-block text-sm text-[var(--accent)] hover:underline">
-          GST invoice →
+          {t("ticket.invoice")}
         </Link>
       </div>
       <div className="flex flex-col items-center">
@@ -157,6 +158,7 @@ function Ticket({ b }: { b: Booking }) {
 
 function BookingView() {
   const { client } = useYatrax();
+  const { t } = useT();
   const router = useRouter();
   const { id } = useParams<{ id: string }>();
   const [b, setB] = useState<Booking | null>(null);
@@ -252,7 +254,7 @@ function BookingView() {
             tone={b.status === "CONFIRMED" ? "ok" : held ? "saffron" : "danger"}
             className="ml-auto"
           >
-            {{ HELD: "Held, awaiting payment", PAYMENT_PENDING: "Payment in progress", CONFIRMED: "Confirmed", EXPIRED: "Hold expired", FAILED: "Failed", CANCELLED: "Cancelled" }[b.status]}
+            {t(`status.${b.status}`)}
           </Badge>
         </div>
         <Journey b={b} />
@@ -360,11 +362,11 @@ function BookingView() {
 
       <div className="flex flex-wrap gap-3 text-sm">
         <Link href="/trips" className="text-[var(--accent)] hover:underline">
-          ← My trips
+          {t("ticket.back")}
         </Link>
         {b.status === "CONFIRMED" && (
           <button onClick={() => window.print()} className="text-[var(--accent)] hover:underline">
-            Print ticket
+            {t("ticket.print")}
           </button>
         )}
       </div>

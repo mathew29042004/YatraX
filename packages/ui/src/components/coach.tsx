@@ -122,7 +122,7 @@ export function CoachMap({ coach }: { coach: CoachLayout }) {
         <span className="inline-flex items-center gap-1">
           <span className="h-3 w-3 rounded border border-line bg-surface" /> Other berths
         </span>
-        <span>Live occupancy arrives with booking in Phase 2.</span>
+        <span>Free and booked berths show on the seat map when you book.</span>
       </div>
     </div>
   );

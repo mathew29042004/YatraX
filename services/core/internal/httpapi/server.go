@@ -91,7 +91,7 @@ func (s *Server) Router() http.Handler {
 		r.Get("/coach-classes/{code}/layout", s.coachLayout)
 		r.Get("/trains/{number}/coaches/{coach}", s.coach)
 
-		// Phase 1: search, fares and availability.
+		// search, fares and availability.
 		r.Get("/search", s.search)
 		r.Get("/search/alternatives", s.alternatives)
 		r.Get("/stations/{code}/stays", s.stayOptions)
@@ -100,20 +100,20 @@ func (s *Server) Router() http.Handler {
 		r.Get("/festivals", s.festivals)
 		r.Get("/quotas", s.quotas)
 
-		// Phase 2: booking core.
+		// booking core.
 		r.Get("/pnr/{pnr}", s.pnrStatus)
 		r.Get("/tickets/public-key", s.ticketPublicKey)
 		r.Post("/tickets/verify", s.verifyTicket)
 		r.Post("/payments/webhook", s.paymentWebhook)
 
-		// Phase 3: cancellation, refunds, charts.
+		// cancellation, refunds, charts.
 		r.Get("/tdr-reasons", s.tdrReasons)
 
-		// Phase 4: Tatkal waiting room.
+		// Tatkal waiting room.
 		r.Get("/waitrooms", s.listWaitrooms)
 		r.Get("/waitrooms/{id}/ws", s.waitroomSocket)
 
-		// Phase 5: live trains and the simulation clock.
+		// live trains and the simulation clock.
 		r.Get("/sim/clock", s.getSimClock)
 		r.Get("/live/trains/{number}", s.liveTrain)
 		r.Get("/live/map", s.liveMap)
@@ -121,7 +121,7 @@ func (s *Server) Router() http.Handler {
 		r.Get("/live/ws", s.liveSocket)
 		r.Get("/live/stations-geo", s.stationsGeo)
 
-		// Phase 7: station boards, announcements and coach positions are public.
+		// station boards, announcements and coach positions are public.
 		r.Get("/stations/{code}/announcements", s.stationAnnouncements)
 		r.Get("/stations/{code}/coach-position/{train}", s.coachPosition)
 
@@ -151,7 +151,7 @@ func (s *Server) Router() http.Handler {
 				r.Get("/admin/waitrooms/{id}/bots", s.waitroomBots)
 			})
 			r.With(auth.RequireRole(auth.RoleVendor)).Get("/vendor/me", s.vendorMe)
-			// Phase 9: the catering vendor's side.
+			// the catering vendor's side.
 			r.Group(func(r chi.Router) {
 				r.Use(auth.RequireRole(auth.RoleVendor))
 				r.Get("/vendor/orders", s.vendorOrders)
@@ -162,7 +162,7 @@ func (s *Server) Router() http.Handler {
 				r.Get("/vendor/payouts", s.vendorPayouts)
 				r.Post("/vendor/payouts", s.requestPayout)
 			})
-			// Phase 7: the station master's desk (their own station only).
+			// the station master's desk (their own station only).
 			r.Group(func(r chi.Router) {
 				r.Use(auth.RequireRole(auth.RoleStation))
 				r.Get("/station-master/{code}/platforms", s.stationPlatforms)
@@ -175,14 +175,14 @@ func (s *Server) Router() http.Handler {
 				r.Get("/station-master/{code}/stays", s.stayDesk)
 				r.Post("/station-master/{code}/stays/{id}", s.advanceStay)
 			})
-			// Phase 6: the TTE app's offline bundle and sync.
+			// the TTE app's offline bundle and sync.
 			r.Group(func(r chi.Router) {
 				r.Use(auth.RequireRole(auth.RoleTTE))
 				r.Get("/tte/duties", s.tteDuties)
 				r.Get("/tte/runs/{train}/{date}", s.tteBundle)
 				r.Post("/tte/runs/{train}/{date}/sync", s.tteSync)
 			})
-			// Phase 11: zone and division dashboards (station staff and TTEs see their own zone).
+			// zone and division dashboards (station staff and TTEs see their own zone).
 			r.Group(func(r chi.Router) {
 				r.Use(auth.RequireRole(auth.RoleController, auth.RoleStation, auth.RoleTTE))
 				r.Get("/analytics/zones", s.analyticsZones)
@@ -205,7 +205,7 @@ func (s *Server) Router() http.Handler {
 				r.Post("/admin/sim/clock", s.setSimClock)
 				r.Post("/admin/live/incidents", s.addIncident)
 				r.Get("/admin/live/incidents", s.listIncidents)
-				// Phase 8: the control room.
+				// the control room.
 				r.Get("/control/section", s.sectionChart)
 				r.Post("/control/what-if", s.whatIf)
 				r.Get("/control/conflicts", s.networkConflicts)
@@ -216,7 +216,7 @@ func (s *Server) Router() http.Handler {
 				r.Post("/control/specials", s.runSpecial)
 				r.Post("/control/runs/disrupt", s.disruptRun)
 				r.Post("/control/runs/extra-coaches", s.addExtraCoaches)
-				// Phase 12: chaos mode.
+				// chaos mode.
 				r.Get("/chaos/drills", s.chaosDrills)
 				r.Get("/chaos/runs", s.chaosRuns)
 				r.Get("/chaos/runs/{id}", s.chaosRun)
@@ -258,7 +258,7 @@ func (s *Server) Router() http.Handler {
 				r.Get("/waitrooms/{id}/status", s.waitroomStatus)
 				r.Post("/waitrooms/{id}/book", s.bookFromWaitroom)
 				r.Get("/me/passengers", s.listSavedPassengers)
-				// Phase 9: food to the berth.
+				// food to the berth.
 				r.Get("/bookings/{id}/food", s.foodOptions)
 				r.Get("/vendors/{id}/menu", s.vendorMenu)
 				r.Post("/food-orders", s.placeFoodOrder)

@@ -1,7 +1,7 @@
 "use client";
 
 import type { Quota, SearchParams, Station } from "@yatrax/api-client";
-import { Alert, Button, cn, useYatrax } from "@yatrax/ui";
+import { Alert, Button, cn, useT, useYatrax } from "@yatrax/ui";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
 import { addDays, todayIST } from "./format";
@@ -33,6 +33,7 @@ const selectClass =
 
 export function SearchForm({ initial, compact }: { initial?: Partial<SearchParams>; compact?: boolean }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const router = useRouter();
   const today = todayIST();
   const [from, setFrom] = useState<Station | null>(null);
@@ -52,8 +53,8 @@ export function SearchForm({ initial, compact }: { initial?: Partial<SearchParam
 
   function submit(e: FormEvent) {
     e.preventDefault();
-    if (!from || !to) return setError("Pick both stations from the list.");
-    if (from.code === to.code) return setError("From and To must be different stations.");
+    if (!from || !to) return setError(t("search.errPick"));
+    if (from.code === to.code) return setError(t("search.errSame"));
     setError(null);
     router.push(searchHref({ from: from.code, to: to.code, date, quota, class: cls, nearby, flex: flex ? 3 : 0 }));
   }
@@ -61,10 +62,10 @@ export function SearchForm({ initial, compact }: { initial?: Partial<SearchParam
   return (
     <form onSubmit={submit} className={cn("rounded-2xl border border-line bg-surface shadow-sm", compact ? "p-4" : "p-5 sm:p-6")}>
       <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr_11rem]">
-        <StationPicker label="From" value={from} onChange={setFrom} placeholder="Station or city, e.g. Chennai" />
+        <StationPicker label={t("search.from")} value={from} onChange={setFrom} placeholder={t("search.fromPh")} />
         <button
           type="button"
-          aria-label="Swap stations"
+          aria-label={t("search.swap")}
           onClick={() => {
             setFrom(to);
             setTo(from);
@@ -73,10 +74,10 @@ export function SearchForm({ initial, compact }: { initial?: Partial<SearchParam
         >
           ⇄
         </button>
-        <StationPicker label="To" value={to} onChange={setTo} placeholder="e.g. Ernakulam" />
+        <StationPicker label={t("search.to")} value={to} onChange={setTo} placeholder={t("search.toPh")} />
         <div>
           <label htmlFor="date" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-muted">
-            Date
+            {t("search.date")}
           </label>
           <input
             id="date"
@@ -93,41 +94,41 @@ export function SearchForm({ initial, compact }: { initial?: Partial<SearchParam
       <div className="mt-3 grid gap-3 sm:grid-cols-2 md:grid-cols-[1fr_1fr_auto]">
         <div>
           <label htmlFor="cls" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-muted">
-            Class
+            {t("search.class")}
           </label>
           <select id="cls" value={cls} onChange={(e) => setCls(e.target.value)} className={selectClass}>
             {CLASSES.map(([v, l]) => (
               <option key={v} value={v}>
-                {l}
+                {v ? l : t("class.all")}
               </option>
             ))}
           </select>
         </div>
         <div>
           <label htmlFor="quota" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-muted">
-            Quota
+            {t("search.quota")}
           </label>
           <select id="quota" value={quota} onChange={(e) => setQuota(e.target.value as Quota)} className={selectClass}>
-            {QUOTAS.map(([v, l]) => (
+            {QUOTAS.map(([v]) => (
               <option key={v} value={v}>
-                {l}
+                {t(`quota.${v}`)}
               </option>
             ))}
           </select>
         </div>
         <Button type="submit" size="lg" className="self-end px-8">
-          Search trains
+          {t("search.submit")}
         </Button>
       </div>
 
       <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <label className="inline-flex cursor-pointer items-center gap-2">
           <input type="checkbox" checked={nearby} onChange={(e) => setNearby(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-          Include nearby stations <span className="text-muted">(e.g. all Chennai stations)</span>
+          {t("search.nearby")} <span className="text-muted">{t("search.nearbyHint")}</span>
         </label>
         <label className="inline-flex cursor-pointer items-center gap-2">
           <input type="checkbox" checked={flex} onChange={(e) => setFlex(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-          Flexible dates <span className="text-muted">(±3 days)</span>
+          {t("search.flex")} <span className="text-muted">{t("search.flexHint")}</span>
         </label>
       </div>
       {error && (

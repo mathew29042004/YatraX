@@ -1,15 +1,16 @@
 "use client";
 
-import { Logo, NotificationBell, SimClockBadge, TextSizeToggle, useYatrax } from "@yatrax/ui";
+import { LanguagePicker, Logo, NotificationBell, SimClockBadge, TextSizeToggle, useT, useYatrax } from "@yatrax/ui";
 import Link from "next/link";
 
 /** Header for public pages: search works without signing in. */
 export function SiteHeader() {
   const { session, ready } = useYatrax();
+  const { t } = useT();
   return (
     <>
       <a href="#main" className="skip-link">
-        Skip to content
+        {t("nav.skip")}
       </a>
       <header className="sticky top-0 z-20 border-b border-line bg-surface/90 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4">
@@ -20,23 +21,24 @@ export function SiteHeader() {
             </span>
           </Link>
           <nav aria-label="Main" className="flex items-center gap-1 text-sm">
+            <LanguagePicker />
             <TextSizeToggle />
             <SimClockBadge />
             <Link href="/" className="rounded-md px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink">
-              Search
+              {t("nav.search")}
             </Link>
             <Link href="/tatkal" className="hidden rounded-md px-3 py-1.5 sm:block text-muted hover:bg-canvas hover:text-ink">
-              Tatkal
+              {t("nav.tatkal")}
             </Link>
             <Link href="/live" className="rounded-md px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink">
-              Live
+              {t("nav.live")}
             </Link>
             <Link href="/pnr" className="hidden rounded-md px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink sm:block">
-              PNR status
+              {t("nav.pnr")}
             </Link>
             {ready && session && (
               <Link href="/trips" className="rounded-md px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink">
-                My trips
+                {t("nav.trips")}
               </Link>
             )}
             {ready && session && <NotificationBell />}
@@ -47,7 +49,7 @@ export function SiteHeader() {
                 </Link>
               ) : (
                 <Link href="/login" className="rounded-md bg-[var(--accent)] px-3 py-1.5 font-medium text-white hover:brightness-110">
-                  Sign in
+                  {t("nav.signIn")}
                 </Link>
               ))}
           </nav>

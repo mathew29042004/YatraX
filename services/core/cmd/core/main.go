@@ -1,5 +1,7 @@
-// Command core is the YatraX core API: auth and network data (Phase 0),
-// growing into the booking core in later phases.
+// Command core is the YatraX core API: one service behind every app — auth, search and
+// fares, the booking core and its ledger, live trains on the simulation clock, the TTE,
+// station, control, catering, dashboard, complaint and chaos services, and the workers
+// (outbox relay, reconciler, promotion engine, notifications, live watcher).
 package main
 
 import (
@@ -100,7 +102,7 @@ func run() error {
 	rooms := waitroom.New(pool, rdb, bookings, net, time.Now)
 	go rooms.Run(ctx)
 	go bookings.RunCharts(ctx, time.Minute)
-	// Phase 5: the railway's clock, live movement and the watcher that turns it into events.
+	// The railway's clock, live movement and the watcher that turns it into events.
 	clock := simclock.New(pool, rdb)
 	if err := clock.Load(ctx); err != nil {
 		return err

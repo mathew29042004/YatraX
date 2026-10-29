@@ -87,16 +87,3 @@ export function ProfileCard({ session, extra }: { session: Session; extra?: Reac
     </Card>
   );
 }
-
-/** Placeholder for features scheduled in a later phase. */
-export function ComingSoon({ phase, title, children }: { phase: number; title: string; children: ReactNode }) {
-  return (
-    <Card className="border-dashed bg-transparent shadow-none">
-      <div className="flex items-center gap-2">
-        <Badge tone="saffron">Phase {phase}</Badge>
-        <h3 className="text-sm font-semibold">{title}</h3>
-      </div>
-      <p className="mt-2 text-sm text-muted">{children}</p>
-    </Card>
-  );
-}

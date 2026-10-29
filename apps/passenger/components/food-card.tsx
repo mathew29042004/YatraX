@@ -2,7 +2,7 @@
 
 import type { Booking, FoodOrder, FoodStatus, FoodStop, MenuItem, VendorBrief } from "@yatrax/api-client";
 import { ApiError } from "@yatrax/api-client";
-import { Alert, Badge, Button, Card, CardTitle, Input, cn, hhmm, useYatrax } from "@yatrax/ui";
+import { Alert, Badge, Button, Card, CardTitle, Input, cn, hhmm, useT, useYatrax } from "@yatrax/ui";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { rupees } from "./format";
 
@@ -205,6 +205,7 @@ function Menu({ b, stop, vendor, onPlaced }: { b: Booking; stop: FoodStop; vendo
 /** Food to your berth: pick a station on the journey, a vendor there, and order. */
 export function FoodCard({ b }: { b: Booking }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const [stops, setStops] = useState<FoodStop[] | null>(null);
   const [orders, setOrders] = useState<FoodOrder[]>([]);
   const [pick, setPick] = useState<{ stop: string; vendor: string } | null>(null);
@@ -227,7 +228,7 @@ export function FoodCard({ b }: { b: Booking }) {
   const vendor = stop?.vendors.find((v) => v.id === pick?.vendor);
   return (
     <Card>
-      <CardTitle hint="Delivered to your berth at a halt">Order food</CardTitle>
+      <CardTitle hint={t("ticket.foodHint")}>{t("ticket.food")}</CardTitle>
       {orders.length > 0 && (
         <div className="mb-4 space-y-2">
           {orders.map((o) => <OrderRow key={o.id} o={o} onChange={load} />)}

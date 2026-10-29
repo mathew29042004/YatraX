@@ -141,7 +141,7 @@ export interface VendorProfile {
   rating: number;
 }
 
-// ── Phase 1: search, fares, availability ──────────────────────────────────
+// ── search, fares, availability ──────────────────────────────────
 
 export type Quota = "GN" | "TQ" | "PT" | "LD" | "SS" | "HP" | "DF" | "FT";
 
@@ -153,7 +153,7 @@ export interface Availability {
   count?: number;
   label: string;
   opens_at?: string;
-  /** Rough 0–100 estimate; the trained PNR model replaces it in Phase 10. */
+  /** Rough 0–100 chance of confirming, from the waitlist position, days left and the train's demand. */
   confirm_chance: number;
 }
 
@@ -265,7 +265,7 @@ export interface CoachLayout {
   seats: CoachSeat[];
 }
 
-// ── Phase 2: booking ──────────────────────────────────────────────────────
+// ── booking ──────────────────────────────────────────────────────
 
 export type BookingStatus = "HELD" | "PAYMENT_PENDING" | "CONFIRMED" | "EXPIRED" | "FAILED" | "CANCELLED";
 export type BerthStatus = "CNF" | "RAC" | "WL" | "CAN" | "NOSHOW";
@@ -437,7 +437,7 @@ export interface SavedPassenger {
   berth_pref: string;
 }
 
-// ── Phase 3: cancellation, refunds, wallet, charts ────────────────────────
+// ── cancellation, refunds, wallet, charts ────────────────────────
 
 export interface PassengerRefund {
   seq: number;
@@ -550,7 +550,7 @@ export interface ReconcileReport {
   refunds_failed: number;
 }
 
-// ── Phase 4: Tatkal waiting room ──────────────────────────────────────────
+// ── Tatkal waiting room ──────────────────────────────────────────
 
 export interface WaitRoom {
   id: string;
@@ -619,7 +619,7 @@ export interface Integrity {
   tatkal_bookings: number;
 }
 
-// ── Phase 5: live trains and the simulation clock ─────────────────────────
+// ── live trains and the simulation clock ─────────────────────────
 
 export interface SimClock {
   sim_now: string;
@@ -729,7 +729,7 @@ export type LiveMessage =
   | { kind: "map"; clock: SimClock; trains: LiveBrief[] }
   | { kind: "event"; event: Record<string, unknown> & { type: string; train: string } };
 
-// ── Phase 6: the TTE app ──────────────────────────────────────────────────
+// ── the TTE app ──────────────────────────────────────────────────
 
 export interface TTEDuty {
   train: string;
@@ -839,7 +839,7 @@ export interface TTEResult {
   data?: Record<string, unknown>;
 }
 
-// ── Phase 7: the station app ──────────────────────────────────────────────
+// ── the station app ──────────────────────────────────────────────
 
 export interface AnnouncementLine {
   lang: string;
@@ -911,7 +911,7 @@ export interface StationFacilities {
   wheelchair: Array<{ id: number; passenger: string; pnr: string; train: string; needed_at: string; status: "requested" | "assigned" | "done"; attendant?: string; created_at: string }>;
 }
 
-// ── Phase 8: the control centre ───────────────────────────────────────────
+// ── the control centre ───────────────────────────────────────────
 
 export interface SectionPoint {
   km: number;

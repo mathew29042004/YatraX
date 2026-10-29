@@ -1,13 +1,14 @@
 "use client";
 
 import type { Booking, CoachPosition } from "@yatrax/api-client";
-import { Card, CardTitle, DelayBadge, hhmm, useLiveTrain, useYatrax } from "@yatrax/ui";
+import { Card, CardTitle, DelayBadge, hhmm, useLiveTrain, useT, useYatrax } from "@yatrax/ui";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 /** Live running status on a confirmed booking: where the train is and when it reaches you. */
 export function LiveCard({ b }: { b: Booking }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const { status } = useLiveTrain(b.train, b.origin_date);
   const [cp, setCp] = useState<CoachPosition | null>(null);
   useEffect(() => {
@@ -21,7 +22,7 @@ export function LiveCard({ b }: { b: Booking }) {
   const done = alight?.state === "departed" || (alight?.state === "here" && status.state === "arrived");
   return (
     <Card>
-      <CardTitle hint={<DelayBadge minutes={status.delay_min} state={status.state} />}>Live status</CardTitle>
+      <CardTitle hint={<DelayBadge minutes={status.delay_min} state={status.state} />}>{t("ticket.live")}</CardTitle>
       <p className="text-sm">{status.message}</p>
       <div className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
         {board && (

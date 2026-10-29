@@ -2,7 +2,7 @@
 
 import type { Booking, Complaint, ComplaintCategory, SOSResult } from "@yatrax/api-client";
 import { ApiError } from "@yatrax/api-client";
-import { Alert, Badge, Button, Card, CardTitle, departmentName, since, useYatrax } from "@yatrax/ui";
+import { Alert, Badge, Button, Card, CardTitle, departmentName, since, useT, useYatrax } from "@yatrax/ui";
 import { useCallback, useEffect, useState } from "react";
 
 const categories: Array<[ComplaintCategory, string]> = [
@@ -26,6 +26,7 @@ const sos = [
 /** On-board help: SOS for emergencies, and RailMadad complaints routed to whoever can fix them. */
 export function HelpCard({ b }: { b: Booking }) {
   const { client } = useYatrax();
+  const { t } = useT();
   const [mine, setMine] = useState<Complaint[]>([]);
   const [confirming, setConfirming] = useState<(typeof sos)[number]["kind"] | null>(null);
   const [result, setResult] = useState<SOSResult | null>(null);
@@ -70,7 +71,7 @@ export function HelpCard({ b }: { b: Booking }) {
 
   return (
     <Card>
-      <CardTitle hint="Railway helpline 139 · women's helpline 1091">Help on board</CardTitle>
+      <CardTitle hint="Railway helpline 139 · women's helpline 1091">{t("ticket.help")}</CardTitle>
       <div className="grid gap-2 sm:grid-cols-3">
         {sos.map((s) =>
           confirming === s.kind ? (
